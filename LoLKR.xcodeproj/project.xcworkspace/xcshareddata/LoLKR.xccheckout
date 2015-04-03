@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>379696B1-C478-4816-BBAC-40072FFA148B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LoLKR</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>61DD4E44FCC89B520E1A9129C3FAEB32DB92CE8D</key>
+		<string>https://bitbucket.org/mrz1277/lolkr.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LoLKR.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>61DD4E44FCC89B520E1A9129C3FAEB32DB92CE8D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/mrz1277/lolkr.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>61DD4E44FCC89B520E1A9129C3FAEB32DB92CE8D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>61DD4E44FCC89B520E1A9129C3FAEB32DB92CE8D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>lolkr</string>
+		</dict>
+	</array>
+</dict>
+</plist>
