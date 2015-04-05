@@ -28,9 +28,8 @@
 
 #pragma mark - 
 
-- (NSWindowController *)preferencesWindowController
-{
-    if (preferencesWindowController == nil)
+- (IBAction)openPreferences:(id)sender {
+    if (!preferencesWindowController)
     {
         NSViewController *generalViewController = [[PreferencePaneGeneral alloc] init];
         NSViewController *advancedViewController = [[PreferencePaneNginx alloc] init];
@@ -39,12 +38,8 @@
         NSString *title = NSLocalizedString(@"환경설정", @"Common title for Preferences window");
         preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
     }
-    return preferencesWindowController;
-}
-
-
-- (IBAction)openPreferences:(id)sender {
-    [self.preferencesWindowController showWindow:nil];
+    
+    [preferencesWindowController showWindow:nil];
 }
 
 @end
