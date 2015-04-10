@@ -50,7 +50,6 @@
 		B65832A71ACDA61B00B781E2 /* PreferencePaneNginx.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneNginx.xib; sourceTree = "<group>"; };
 		B65832AB1ACDBB3800B781E2 /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
 		B65832AC1ACDBB3800B781E2 /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
-		B66668531AD87C8700BB9D29 /* Script.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Script.sh; sourceTree = "<group>"; };
 		B67E1D531AC68578003FA730 /* 롤 한글 패치.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "롤 한글 패치.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67E1D571AC68578003FA730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67E1D581AC68578003FA730 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,7 +100,6 @@
 				B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */,
 				B61B58001AD6A6B2006558AA /* 3_lol.sh */,
 				B69F06A11AD735B2005802FA /* update.sh */,
-				B66668531AD87C8700BB9D29 /* Script.sh */,
 			);
 			name = scripts;
 			sourceTree = "<group>";
