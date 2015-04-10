@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    NSLog(@"\n%@", [self runCommand:@"ps -ef | grep nginx"]);
+    NSLog(@"\n%@", [self runCommand:@"ps -ef | grep nginx"]);
     
     // Do any additional setup after loading the view.
 }
