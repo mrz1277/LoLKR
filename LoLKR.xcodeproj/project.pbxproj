@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B386F99F263A1A9AE38AE082 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ADF3F2B1BE18C3FA711AC7 /* libPods.a */; };
+		B61B57FD1AD69ECB006558AA /* 1_nginx.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FC1AD69DB7006558AA /* 1_nginx.sh */; };
+		B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */; };
+		B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B58001AD6A6B2006558AA /* 3_lol.sh */; };
 		B65832A31ACDA5A200B781E2 /* PreferencePaneGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = B65832A11ACDA5A200B781E2 /* PreferencePaneGeneral.m */; };
 		B65832A41ACDA5A200B781E2 /* PreferencePaneGeneral.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65832A21ACDA5A200B781E2 /* PreferencePaneGeneral.xib */; };
 		B65832A81ACDA61B00B781E2 /* PreferencePaneNginx.m in Sources */ = {isa = PBXBuildFile; fileRef = B65832A61ACDA61B00B781E2 /* PreferencePaneNginx.m */; };
@@ -37,6 +40,9 @@
 		08ADF3F2B1BE18C3FA711AC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C10437A67E8042E60E47DB9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		450107DDDFF60139139CA600 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B61B57FC1AD69DB7006558AA /* 1_nginx.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = 1_nginx.sh; sourceTree = "<group>"; };
+		B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 2_download_versions.sh; sourceTree = "<group>"; };
+		B61B58001AD6A6B2006558AA /* 3_lol.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 3_lol.sh; sourceTree = "<group>"; };
 		B65832A01ACDA5A200B781E2 /* PreferencePaneGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneGeneral.h; sourceTree = "<group>"; };
 		B65832A11ACDA5A200B781E2 /* PreferencePaneGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencePaneGeneral.m; sourceTree = "<group>"; };
 		B65832A21ACDA5A200B781E2 /* PreferencePaneGeneral.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneGeneral.xib; sourceTree = "<group>"; };
@@ -88,6 +94,17 @@
 				450107DDDFF60139139CA600 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B61B57FB1AD69DA3006558AA /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				B61B57FC1AD69DB7006558AA /* 1_nginx.sh */,
+				B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */,
+				B61B58001AD6A6B2006558AA /* 3_lol.sh */,
+				B69F06A11AD735B2005802FA /* update.sh */,
+			);
+			name = scripts;
 			sourceTree = "<group>";
 		};
 		B658329F1ACDA27200B781E2 /* Preferences */ = {
@@ -154,6 +171,7 @@
 		B67E1D561AC68578003FA730 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B61B57FB1AD69DA3006558AA /* scripts */,
 				B67E1D571AC68578003FA730 /* Info.plist */,
 				B67E1D5B1AC68578003FA730 /* main.m */,
 			);
@@ -268,11 +286,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61B57FD1AD69ECB006558AA /* 1_nginx.sh in Resources */,
+				B69F06A21AD735B2005802FA /* update.sh in Resources */,
+				B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */,
 				B65832A91ACDA61B00B781E2 /* PreferencePaneNginx.xib in Resources */,
 				B67E1D611AC68578003FA730 /* Images.xcassets in Resources */,
 				B67E1D641AC68578003FA730 /* Main.storyboard in Resources */,
 				B6F35B3F1AD876D300DED4C8 /* PreferencePaneLol.xib in Resources */,
 				B65832A41ACDA5A200B781E2 /* PreferencePaneGeneral.xib in Resources */,
+				B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
