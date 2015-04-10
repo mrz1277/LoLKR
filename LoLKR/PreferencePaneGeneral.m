@@ -7,8 +7,10 @@
 //
 
 #import "PreferencePaneGeneral.h"
+#import "ITSwitch.h"
 
 @interface PreferencePaneGeneral ()
+@property (weak) IBOutlet ITSwitch *updateSwitch;
 
 @end
 
@@ -20,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    self.updateSwitch.focusRingType = NSFocusRingTypeNone;
 }
 
 #pragma mark - MASPreferencesViewController
