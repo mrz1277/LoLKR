@@ -11,6 +11,7 @@
 #import "MASPreferencesWindowController.h"
 #import "PreferencePaneGeneral.h"
 #import "PreferencePaneNginx.h"
+#import "PreferencePaneLol.h"
 
 @interface AppDelegate ()
 
@@ -33,7 +34,8 @@
     {
         NSViewController *generalViewController = [[PreferencePaneGeneral alloc] init];
         NSViewController *advancedViewController = [[PreferencePaneNginx alloc] init];
-        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, advancedViewController, nil];
+        NSViewController *lolViewController = [[PreferencePaneLol alloc] init];
+        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, advancedViewController, lolViewController, nil];
         
         NSString *title = NSLocalizedString(@"환경설정", @"Common title for Preferences window");
         preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
