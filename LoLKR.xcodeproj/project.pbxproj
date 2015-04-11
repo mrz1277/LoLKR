@@ -24,6 +24,7 @@
 		B67E1D701AC68578003FA730 /* LoLKRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D6F1AC68578003FA730 /* LoLKRTests.m */; };
 		B6F35B3E1AD876D300DED4C8 /* PreferencePaneLol.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */; };
 		B6F35B3F1AD876D300DED4C8 /* PreferencePaneLol.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */; };
+		B69F06A21AD735B2005802FA /* update.sh in Resources */ = {isa = PBXBuildFile; fileRef = B69F06A11AD735B2005802FA /* update.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		B6F35B3B1AD876D300DED4C8 /* PreferencePaneLol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneLol.h; sourceTree = "<group>"; };
 		B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencePaneLol.m; sourceTree = "<group>"; };
 		B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneLol.xib; sourceTree = "<group>"; };
+		B69F06A11AD735B2005802FA /* update.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

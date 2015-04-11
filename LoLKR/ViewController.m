@@ -8,12 +8,17 @@
 
 #import "ViewController.h"
 
-@implementation ViewController
+@implementation ViewController {
+    
+    __weak IBOutlet NSProgressIndicator *progress;
+    __unsafe_unretained IBOutlet NSTextView *textView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSLog(@"\n%@", [self runCommand:@"ps -ef | grep nginx"]);
+    [progress stopAnimation:nil];
+    
+//    NSLog(@"\n%@", [self runCommand:@"ps -ef | grep nginx"]);
     
     // Do any additional setup after loading the view.
 }
@@ -54,7 +59,24 @@
 }
 
 - (IBAction)runAll:(id)sender {
+    [progress startAnimation:nil];
     
+    NSString *sh1 = [[NSBundle mainBundle] pathForResource:@"1_nginx" ofType:@"sh"];
+    
+    NSTask *task = [[NSTask alloc] init];
+    [task setLaunchPath:@"/bin/sh"];
+    [task setArguments:@[ @"-c", [NSString stringWithFormat:@"\"%@\"", sh1] ]];
+    
+    NSPipe *pipe = [NSPipe pipe];
+    [task setStandardOutput: pipe];
+    
+    NSFileHandle *file = [pipe fileHandleForReading];
+    [task launch];
+    
+    NSData *data = [file readDataToEndOfFile];
+    textView.string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+    
+    [progress stopAnimation:nil];
 }
 
 @end

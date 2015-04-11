@@ -7,11 +7,11 @@
 #  Copyright (c) 2015 Jaesung Koo. All rights reserved.
 
 # install
-if hash brew 2>/dev/null; then
-    brew update && brew install nginx
+if hash /usr/local/bin/brew 2>/dev/null; then
+    /usr/local/bin/brew update && /usr/local/bin/brew install nginx
 else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install nginx
+    /usr/local/bin/brew install nginx
 fi
 
 # exceptions
@@ -71,8 +71,8 @@ http {
 ln -sf /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
 
 # run
-if ps ax | grep -v grep | grep nginx > /dev/null; then
-    nginx -s reload
+if ps ax | grep -v grep | grep -v 1_nginx | grep nginx > /dev/null; then
+    /usr/local/bin/nginx -s reload
 else
-    nginx
+    /usr/local/bin/nginx
 fi
