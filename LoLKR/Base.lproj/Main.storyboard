@@ -188,8 +188,8 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="패치" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="400"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
@@ -206,30 +206,23 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="322"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-To-rBD">
-                                <rect key="frame" x="14" y="13" width="452" height="32"/>
-                                <buttonCell key="cell" type="push" title="환경설정" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yVb-s9-eaJ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq1-nK-Gma">
-                                <rect key="frame" x="20" y="170" width="440" height="210"/>
-                                <clipView key="contentView" misplaced="YES" id="LNa-Iq-HYr">
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq1-nK-Gma">
+                                <rect key="frame" x="20" y="173" width="440" height="129"/>
+                                <clipView key="contentView" id="LNa-Iq-HYr">
                                     <rect key="frame" x="1" y="1" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="fSD-ui-XFf">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                        <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="fSD-ui-XFf">
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="423" height="208"/>
+                                            <size key="minSize" width="438" height="127"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="423" height="208"/>
+                                            <size key="minSize" width="438" height="127"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>
@@ -244,20 +237,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <progressIndicator fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-sj-oK5">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-To-rBD">
+                                <rect key="frame" x="14" y="13" width="452" height="32"/>
+                                <buttonCell key="cell" type="push" title="환경설정" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yVb-s9-eaJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <progressIndicator hidden="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-sj-oK5">
                                 <rect key="frame" x="20" y="146" width="440" height="20"/>
                             </progressIndicator>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YzW-T4-Sth">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YzW-T4-Sth">
                                 <rect key="frame" x="14" y="105" width="452" height="32"/>
                                 <buttonCell key="cell" type="push" title="통합 패치" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iFI-qv-EI3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="runAll:" target="XfG-lQ-9wD" id="BI1-qZ-rIC"/>
+                                    <action selector="runAllScripts:" target="XfG-lQ-9wD" id="2Ah-NW-nD6"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yq-YO-7nC">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Yq-YO-7nC">
                                 <rect key="frame" x="14" y="71" width="452" height="32"/>
                                 <buttonCell key="cell" type="push" title="한글 패치만" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ltp-pI-gap">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -265,15 +265,34 @@
                                 </buttonCell>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="yLD-To-rBD" secondAttribute="bottom" constant="20" symbolic="YES" id="7Sq-ag-aI7"/>
+                            <constraint firstItem="IV3-sj-oK5" firstAttribute="leading" secondItem="YzW-T4-Sth" secondAttribute="leading" id="8hB-ij-WYF"/>
+                            <constraint firstItem="oq1-nK-Gma" firstAttribute="leading" secondItem="IV3-sj-oK5" secondAttribute="leading" id="9JN-0J-Qeh"/>
+                            <constraint firstItem="7Yq-YO-7nC" firstAttribute="leading" secondItem="YzW-T4-Sth" secondAttribute="leading" id="DGB-vU-SQd"/>
+                            <constraint firstItem="YzW-T4-Sth" firstAttribute="trailing" secondItem="7Yq-YO-7nC" secondAttribute="trailing" id="GWn-XN-Fgm"/>
+                            <constraint firstAttribute="trailing" secondItem="oq1-nK-Gma" secondAttribute="trailing" constant="20" symbolic="YES" id="GlZ-Nd-u9m"/>
+                            <constraint firstItem="oq1-nK-Gma" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="KGe-ql-S82"/>
+                            <constraint firstItem="7Yq-YO-7nC" firstAttribute="top" secondItem="YzW-T4-Sth" secondAttribute="bottom" constant="13" id="f8i-7N-6Z1"/>
+                            <constraint firstItem="IV3-sj-oK5" firstAttribute="trailing" secondItem="oq1-nK-Gma" secondAttribute="trailing" id="gJw-Kp-RZz"/>
+                            <constraint firstItem="IV3-sj-oK5" firstAttribute="top" secondItem="oq1-nK-Gma" secondAttribute="bottom" constant="8" symbolic="YES" id="lEi-H5-hsL"/>
+                            <constraint firstItem="yLD-To-rBD" firstAttribute="top" secondItem="7Yq-YO-7nC" secondAttribute="bottom" constant="37" id="nva-ui-cYe"/>
+                            <constraint firstItem="yLD-To-rBD" firstAttribute="trailing" secondItem="7Yq-YO-7nC" secondAttribute="trailing" id="plD-ai-Sju"/>
+                            <constraint firstItem="YzW-T4-Sth" firstAttribute="top" secondItem="IV3-sj-oK5" secondAttribute="bottom" constant="14" id="t4t-o3-7EW"/>
+                            <constraint firstItem="IV3-sj-oK5" firstAttribute="trailing" secondItem="YzW-T4-Sth" secondAttribute="trailing" id="viE-jj-c3C"/>
+                            <constraint firstItem="7Yq-YO-7nC" firstAttribute="leading" secondItem="yLD-To-rBD" secondAttribute="leading" id="wAl-h7-FDd"/>
+                            <constraint firstItem="oq1-nK-Gma" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="x6O-69-wVQ"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="patchAllButton" destination="YzW-T4-Sth" id="xAm-Az-kcd"/>
                         <outlet property="progress" destination="IV3-sj-oK5" id="h3A-3Q-n3o"/>
                         <outlet property="textView" destination="fSD-ui-XFf" id="ujJ-2Z-oW1"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="365"/>
+            <point key="canvasLocation" x="684" y="326"/>
         </scene>
     </scenes>
 </document>

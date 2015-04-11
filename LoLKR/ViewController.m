@@ -7,20 +7,19 @@
 //
 
 #import "ViewController.h"
+#import <PromiseKit.h>
 
 @implementation ViewController {
     
+    __weak IBOutlet NSButton *patchAllButton;
     __weak IBOutlet NSProgressIndicator *progress;
     __unsafe_unretained IBOutlet NSTextView *textView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [progress stopAnimation:nil];
-    
-//    NSLog(@"\n%@", [self runCommand:@"ps -ef | grep nginx"]);
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -29,54 +28,63 @@
     // Update the view, if already loaded.
 }
 
-- (NSString *)runCommand:(NSString *)commandToRun
-{
-    NSTask *task;
-    task = [[NSTask alloc] init];
-    [task setLaunchPath: @"/bin/sh"];
-    
-    NSArray *arguments = [NSArray arrayWithObjects:
-                          @"-c" ,
-                          [NSString stringWithFormat:@"%@", commandToRun],
-                          nil];
-    [task setArguments: arguments];
-    
-    NSPipe *pipe;
-    pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
-    
-    NSFileHandle *file;
-    file = [pipe fileHandleForReading];
-    
-    [task launch];
-    
-    NSData *data;
-    data = [file readDataToEndOfFile];
-    
-    NSString *output;
-    output = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    return output;
-}
-
-- (IBAction)runAll:(id)sender {
+- (IBAction)runAllScripts:(id)sender {
+    patchAllButton.enabled = NO;
+    progress.hidden = NO;
     [progress startAnimation:nil];
     
-    NSString *sh1 = [[NSBundle mainBundle] pathForResource:@"1_nginx" ofType:@"sh"];
+    dispatch_promise(^{
+        return [self runScript:@"1_nginx"];
+    }).thenInBackground(^(NSNumber *status) {
+        if ([status intValue] == 0) {
+            textView.string = [textView.string stringByAppendingString:@"완료\n\n"];
+            return [self runScript:@"2_download_versions"];
+        } else {
+            return [NSNumber numberWithInt:-1];
+        }
+    }).thenInBackground(^(NSNumber *status) {
+        if ([status intValue] == 0) {
+            textView.string = [textView.string stringByAppendingString:@"완료\n\n"];
+            if ([[self runScript:@"3_lol"] intValue] == 0) {
+                textView.string = [textView.string stringByAppendingString:@"완료\n\n"];
+            }
+        }
+    }).finally(^{
+        [progress stopAnimation:nil];
+        patchAllButton.enabled = YES;
+    });
+}
+
+- (NSNumber *)runScript:(NSString *)scriptName {
+    textView.string = [textView.string stringByAppendingString:[NSString stringWithFormat:@"%@.sh\n", scriptName]];
+    
+    NSString *scriptFile = [[NSBundle mainBundle] pathForResource:scriptName ofType:@"sh"];
     
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
-    [task setArguments:@[ @"-c", [NSString stringWithFormat:@"\"%@\"", sh1] ]];
+    [task setArguments:@[ @"-c", [NSString stringWithFormat:@"\"%@\"", scriptFile] ]];
     
     NSPipe *pipe = [NSPipe pipe];
     [task setStandardOutput: pipe];
     
-    NSFileHandle *file = [pipe fileHandleForReading];
+    [[pipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:[pipe fileHandleForReading] queue:nil usingBlock:^(NSNotification *notification){
+        //
+        NSData *output = [[pipe fileHandleForReading] availableData];
+        NSString *outStr = [[NSString alloc] initWithData:output encoding:NSUTF8StringEncoding];
+        //
+        if ([outStr length] > 0) {
+            textView.string = [textView.string stringByAppendingString:[NSString stringWithFormat:@"\n%@", outStr]];
+            [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+        }
+        //
+        [[pipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+    }];
+    
     [task launch];
+    [task waitUntilExit];
     
-    NSData *data = [file readDataToEndOfFile];
-    textView.string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    
-    [progress stopAnimation:nil];
+    return [NSNumber numberWithInt:[task terminationStatus]];
 }
 
 @end

@@ -15,7 +15,7 @@ else
 fi
 
 # exceptions
-if ! hash nginx 2>/dev/null; then
+if ! hash /usr/local/bin/nginx 2>/dev/null; then
     echo "nginx가 설치되지 않았습니다."
     exit 1
 fi
