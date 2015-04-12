@@ -1,10 +1,12 @@
 #!/bin/sh
 
-#  download_versions.sh
+#  2_download_versions.sh
 #  LoLKR
 #
 #  Created by Jason Koo on 4/9/15.
 #  Copyright (c) 2015 Jaesung Koo. All rights reserved.
+#
+#  $> ./2_download_versions.sh
 
 # nginx home folder check
 if [ ! -d "/usr/local/var/www" ]; then

@@ -20,7 +20,13 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults objectForKey:@"port1"]) {
+        [userDefaults setObject:@"8010" forKey:@"port1"];
+    }
+    if (![userDefaults objectForKey:@"port2"]) {
+        [userDefaults setObject:@"8020" forKey:@"port2"];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

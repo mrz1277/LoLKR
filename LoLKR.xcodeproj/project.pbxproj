@@ -22,9 +22,11 @@
 		B67E1D611AC68578003FA730 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67E1D601AC68578003FA730 /* Images.xcassets */; };
 		B67E1D641AC68578003FA730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E1D621AC68578003FA730 /* Main.storyboard */; };
 		B67E1D701AC68578003FA730 /* LoLKRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D6F1AC68578003FA730 /* LoLKRTests.m */; };
+		B69F06A21AD735B2005802FA /* update.sh in Resources */ = {isa = PBXBuildFile; fileRef = B69F06A11AD735B2005802FA /* update.sh */; };
 		B6F35B3E1AD876D300DED4C8 /* PreferencePaneLol.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */; };
 		B6F35B3F1AD876D300DED4C8 /* PreferencePaneLol.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */; };
-		B69F06A21AD735B2005802FA /* update.sh in Resources */ = {isa = PBXBuildFile; fileRef = B69F06A11AD735B2005802FA /* update.sh */; };
+		B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */; };
+		B6F35B441AD9C4D100DED4C8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,10 +66,13 @@
 		B67E1D691AC68578003FA730 /* LoLKRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLKRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67E1D6E1AC68578003FA730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67E1D6F1AC68578003FA730 /* LoLKRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoLKRTests.m; sourceTree = "<group>"; };
+		B69F06A11AD735B2005802FA /* update.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sh; sourceTree = "<group>"; };
 		B6F35B3B1AD876D300DED4C8 /* PreferencePaneLol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneLol.h; sourceTree = "<group>"; };
 		B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencePaneLol.m; sourceTree = "<group>"; };
 		B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneLol.xib; sourceTree = "<group>"; };
-		B69F06A11AD735B2005802FA /* update.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sh; sourceTree = "<group>"; };
+		B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		B6F35B421AD9C4D100DED4C8 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,8 @@
 				B67E1D591AC68578003FA730 /* AppDelegate.m */,
 				B67E1D5D1AC68578003FA730 /* ViewController.h */,
 				B67E1D5E1AC68578003FA730 /* ViewController.m */,
+				B6F35B421AD9C4D100DED4C8 /* ConfigViewController.h */,
+				B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */,
 				B67E1D601AC68578003FA730 /* Images.xcassets */,
 				B67E1D621AC68578003FA730 /* Main.storyboard */,
 				B67E1D561AC68578003FA730 /* Supporting Files */,
@@ -176,6 +183,7 @@
 				B61B57FB1AD69DA3006558AA /* scripts */,
 				B67E1D571AC68578003FA730 /* Info.plist */,
 				B67E1D5B1AC68578003FA730 /* main.m */,
+				B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 				B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */,
 				B65832A91ACDA61B00B781E2 /* PreferencePaneNginx.xib in Resources */,
 				B67E1D611AC68578003FA730 /* Images.xcassets in Resources */,
+				B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */,
 				B67E1D641AC68578003FA730 /* Main.storyboard in Resources */,
 				B6F35B3F1AD876D300DED4C8 /* PreferencePaneLol.xib in Resources */,
 				B65832A41ACDA5A200B781E2 /* PreferencePaneGeneral.xib in Resources */,
@@ -353,6 +362,7 @@
 				B67E1D5A1AC68578003FA730 /* AppDelegate.m in Sources */,
 				B6F35B3E1AD876D300DED4C8 /* PreferencePaneLol.m in Sources */,
 				B65832A81ACDA61B00B781E2 /* PreferencePaneNginx.m in Sources */,
+				B6F35B441AD9C4D100DED4C8 /* ConfigViewController.m in Sources */,
 				B65832A31ACDA5A200B781E2 /* PreferencePaneGeneral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

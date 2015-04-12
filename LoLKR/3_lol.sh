@@ -5,19 +5,21 @@
 #
 #  Created by Jason Koo on 4/9/15.
 #  Copyright (c) 2015 Jaesung Koo. All rights reserved.
+#
+#  $> ./3_lol.sh "/Application/League of Legends.app" 8010
 
-# define lol path
-BASE_DIR=""
-if [ -z "$1" ]; then
-    BASE_DIR="/Applications/League of Legends.app/Contents/LoL/RADS"
-else
-    BASE_DIR="$1/Contents/LoL/RADS"
+# arguments
+if [ "$#" -ne 2 ]; then
+    echo "Illegal number of parameters"
+    exit 3
 fi
 
-if [ ! -d "$BASE_DIR" ]; then
+if [ ! -d "$1" ]; then
     echo "롤 설치 경로를 확인해 주세요."
     exit 3
 fi
+
+BASE_DIR="$1/Contents/LoL/RADS"
 
 # add korea server on menu
 echo "na,            na,            en_US,                                                                                                                                                          A
@@ -64,7 +66,7 @@ Korean, ko_KR" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.7/languages.t
 
 # change update server address
 echo "DownloadPath = /releases/Maclive
-DownloadURL = 127.0.0.1:8010
+DownloadURL = 127.0.0.1:$2
 Region = KR" > "$BASE_DIR/system/system.cfg"
 
 # change login server address

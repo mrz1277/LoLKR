@@ -1,10 +1,18 @@
 #!/bin/sh
 
-#  install_nginx.sh
+#  1_nginx.sh
 #  LoLKR
 #
 #  Created by Jason Koo on 4/9/15.
 #  Copyright (c) 2015 Jaesung Koo. All rights reserved.
+#
+#  $> ./1_nginx.sh 8010 8020
+
+# arguments
+if [ "$#" -ne 2 ]; then
+    echo "Illegal number of parameters"
+    exit 1
+fi
 
 # install
 if hash /usr/local/bin/brew 2>/dev/null; then
@@ -26,7 +34,7 @@ if [ ! -d "/usr/local/etc/nginx/" ]; then
 fi
 
 # configuration
-echo '
+echo "
 worker_processes    1;
 
 events {
@@ -39,12 +47,12 @@ http {
 
     # disable auto-update
     server {
-        listen       8010;
+        listen       $1;
         server_name  localhost;
 
         location / {
             root        html;
-            try_files   $uri $uri/ @cdn;
+            try_files   \$uri \$uri/ @cdn;
         }
 
         location @cdn {
@@ -54,18 +62,18 @@ http {
 
     # enable auto-update
     server {
-        listen      8020;
+        listen      $2;
         server_name localhost;
 
-        rewrite      ^(.*)_KR$        $1_NA;
-        rewrite      ^(.*)_kr/(.*)$   $1_na/$2;
+        rewrite      ^(.*)_KR\$        \$1_NA;
+        rewrite      ^(.*)_kr/(.*)\$   \$1_na/\$2;
 
         location / {
             proxy_pass  http://l3cdn.riotgames.com;
         }
     }
 }
-' > /usr/local/etc/nginx/nginx.conf
+" > /usr/local/etc/nginx/nginx.conf
 
 # start item
 ln -sf /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
