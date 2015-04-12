@@ -25,13 +25,13 @@
 - (IBAction)done:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    if (self.port1TextField.stringValue) {
+    if ([self.port1TextField.stringValue length] > 0) {
         [userDefaults setObject:self.port1TextField.stringValue forKey:@"port1"];
     }
-    if (self.port2TextField.stringValue) {
+    if ([self.port2TextField.stringValue length] > 0) {
         [userDefaults setObject:self.port2TextField.stringValue forKey:@"port2"];
     }
-    [userDefaults setObject:[NSString stringWithCString:self.pathControl.URL.fileSystemRepresentation encoding:NSUTF8StringEncoding] forKey:@"lol_path"];
+    [userDefaults setObject:[NSString stringWithFormat:@"\"%@\"", [NSString stringWithCString:self.pathControl.URL.fileSystemRepresentation encoding:NSUTF8StringEncoding]] forKey:@"lol_path"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"runAllScript" object:nil userInfo:@{@"install_nginx": [NSNumber numberWithBool:(self.nginxInstall.state != 0)]}];
     

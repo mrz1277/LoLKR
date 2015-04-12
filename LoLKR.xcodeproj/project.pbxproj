@@ -11,10 +11,6 @@
 		B61B57FD1AD69ECB006558AA /* 1_nginx.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FC1AD69DB7006558AA /* 1_nginx.sh */; };
 		B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */; };
 		B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B58001AD6A6B2006558AA /* 3_lol.sh */; };
-		B65832A31ACDA5A200B781E2 /* PreferencePaneGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = B65832A11ACDA5A200B781E2 /* PreferencePaneGeneral.m */; };
-		B65832A41ACDA5A200B781E2 /* PreferencePaneGeneral.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65832A21ACDA5A200B781E2 /* PreferencePaneGeneral.xib */; };
-		B65832A81ACDA61B00B781E2 /* PreferencePaneNginx.m in Sources */ = {isa = PBXBuildFile; fileRef = B65832A61ACDA61B00B781E2 /* PreferencePaneNginx.m */; };
-		B65832A91ACDA61B00B781E2 /* PreferencePaneNginx.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65832A71ACDA61B00B781E2 /* PreferencePaneNginx.xib */; };
 		B65832AD1ACDBB3800B781E2 /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B65832AC1ACDBB3800B781E2 /* ITSwitch.m */; };
 		B67E1D5A1AC68578003FA730 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D591AC68578003FA730 /* AppDelegate.m */; };
 		B67E1D5C1AC68578003FA730 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D5B1AC68578003FA730 /* main.m */; };
@@ -23,8 +19,6 @@
 		B67E1D641AC68578003FA730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E1D621AC68578003FA730 /* Main.storyboard */; };
 		B67E1D701AC68578003FA730 /* LoLKRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D6F1AC68578003FA730 /* LoLKRTests.m */; };
 		B69F06A21AD735B2005802FA /* update.sh in Resources */ = {isa = PBXBuildFile; fileRef = B69F06A11AD735B2005802FA /* update.sh */; };
-		B6F35B3E1AD876D300DED4C8 /* PreferencePaneLol.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */; };
-		B6F35B3F1AD876D300DED4C8 /* PreferencePaneLol.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */; };
 		B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */; };
 		B6F35B441AD9C4D100DED4C8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */; };
 /* End PBXBuildFile section */
@@ -46,12 +40,6 @@
 		B61B57FC1AD69DB7006558AA /* 1_nginx.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = 1_nginx.sh; sourceTree = "<group>"; };
 		B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 2_download_versions.sh; sourceTree = "<group>"; };
 		B61B58001AD6A6B2006558AA /* 3_lol.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 3_lol.sh; sourceTree = "<group>"; };
-		B65832A01ACDA5A200B781E2 /* PreferencePaneGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneGeneral.h; sourceTree = "<group>"; };
-		B65832A11ACDA5A200B781E2 /* PreferencePaneGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencePaneGeneral.m; sourceTree = "<group>"; };
-		B65832A21ACDA5A200B781E2 /* PreferencePaneGeneral.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneGeneral.xib; sourceTree = "<group>"; };
-		B65832A51ACDA61B00B781E2 /* PreferencePaneNginx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneNginx.h; sourceTree = "<group>"; };
-		B65832A61ACDA61B00B781E2 /* PreferencePaneNginx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencePaneNginx.m; sourceTree = "<group>"; };
-		B65832A71ACDA61B00B781E2 /* PreferencePaneNginx.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneNginx.xib; sourceTree = "<group>"; };
 		B65832AB1ACDBB3800B781E2 /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
 		B65832AC1ACDBB3800B781E2 /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
 		B67E1D531AC68578003FA730 /* 롤 한글 패치.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "롤 한글 패치.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,9 +55,6 @@
 		B67E1D6E1AC68578003FA730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67E1D6F1AC68578003FA730 /* LoLKRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoLKRTests.m; sourceTree = "<group>"; };
 		B69F06A11AD735B2005802FA /* update.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sh; sourceTree = "<group>"; };
-		B6F35B3B1AD876D300DED4C8 /* PreferencePaneLol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneLol.h; sourceTree = "<group>"; };
-		B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencePaneLol.m; sourceTree = "<group>"; };
-		B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencePaneLol.xib; sourceTree = "<group>"; };
 		B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		B6F35B421AD9C4D100DED4C8 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
@@ -114,22 +99,6 @@
 			name = scripts;
 			sourceTree = "<group>";
 		};
-		B658329F1ACDA27200B781E2 /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-				B65832A01ACDA5A200B781E2 /* PreferencePaneGeneral.h */,
-				B65832A11ACDA5A200B781E2 /* PreferencePaneGeneral.m */,
-				B65832A21ACDA5A200B781E2 /* PreferencePaneGeneral.xib */,
-				B65832A51ACDA61B00B781E2 /* PreferencePaneNginx.h */,
-				B65832A61ACDA61B00B781E2 /* PreferencePaneNginx.m */,
-				B65832A71ACDA61B00B781E2 /* PreferencePaneNginx.xib */,
-				B6F35B3B1AD876D300DED4C8 /* PreferencePaneLol.h */,
-				B6F35B3C1AD876D300DED4C8 /* PreferencePaneLol.m */,
-				B6F35B3D1AD876D300DED4C8 /* PreferencePaneLol.xib */,
-			);
-			name = Preferences;
-			sourceTree = "<group>";
-		};
 		B65832AA1ACDBB2F00B781E2 /* ITSwitch */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				B65832AA1ACDBB2F00B781E2 /* ITSwitch */,
-				B658329F1ACDA27200B781E2 /* Preferences */,
 				B67E1D581AC68578003FA730 /* AppDelegate.h */,
 				B67E1D591AC68578003FA730 /* AppDelegate.m */,
 				B67E1D5D1AC68578003FA730 /* ViewController.h */,
@@ -299,12 +267,9 @@
 				B61B57FD1AD69ECB006558AA /* 1_nginx.sh in Resources */,
 				B69F06A21AD735B2005802FA /* update.sh in Resources */,
 				B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */,
-				B65832A91ACDA61B00B781E2 /* PreferencePaneNginx.xib in Resources */,
 				B67E1D611AC68578003FA730 /* Images.xcassets in Resources */,
 				B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */,
 				B67E1D641AC68578003FA730 /* Main.storyboard in Resources */,
-				B6F35B3F1AD876D300DED4C8 /* PreferencePaneLol.xib in Resources */,
-				B65832A41ACDA5A200B781E2 /* PreferencePaneGeneral.xib in Resources */,
 				B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,10 +325,7 @@
 				B67E1D5F1AC68578003FA730 /* ViewController.m in Sources */,
 				B67E1D5C1AC68578003FA730 /* main.m in Sources */,
 				B67E1D5A1AC68578003FA730 /* AppDelegate.m in Sources */,
-				B6F35B3E1AD876D300DED4C8 /* PreferencePaneLol.m in Sources */,
-				B65832A81ACDA61B00B781E2 /* PreferencePaneNginx.m in Sources */,
 				B6F35B441AD9C4D100DED4C8 /* ConfigViewController.m in Sources */,
-				B65832A31ACDA5A200B781E2 /* PreferencePaneGeneral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +444,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "롤 한글 패치";
 			};
 			name = Debug;
@@ -495,6 +458,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "롤 한글 패치";
 			};
 			name = Release;
