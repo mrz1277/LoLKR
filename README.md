@@ -19,20 +19,22 @@
 
 # 해결
 
-'그렇다면 북미서버가 업데이트 되어도 한국서버가 업데이트 될 때까지 클라 업데이트를 지연하면 되지 않을까?'
+그렇다면 북미서버가 업데이트 되어도 한국서버가 업데이트 될 때까지 클라 업데이트를 지연시키면 되지 않을까요?
 로컬에 웹서버를 두고 롤 업데이트 서버주소를 로컬로 바라보게 하였습니다.
 몇 가지 필요한 작업을 해주고 나니 외국 서버 업데이트가 진행되어도 한국 서버에 접속할 수 있게 되었습니다.
 그리고 한국 서버가 업데이트 되고 나면 원래대로 클라 업데이트를 진행시켰습니다.
-
-원래 쉘스크립트로 위 과정들을 배포하려 했는데 시간을 좀 더 할애해서 앱으로 패키징 해서 좀 더 쉽게 할 수 있게 했습니다.
 
 # 사용법
 
 ## 1. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/v1.0/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
 
+'패치 하기' 버튼을 눌러주세요.
+
 ## 2. 패치 시작 
 ![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png) 
+
+대부분은 그냥 확인 버튼을 누르시면 됩니다.
 
 * 기본 롤 경로(/응용 프로그램/League of Legends)가 아니신 분들은 별도로 설정해주세요.
 * `brew`를 이용해서 로컬에 nginx를 설치합니다. 이미 설치가 되신 분들은 포트만 겹치지 않게 nginx.conf 파일만 아래와 같이 따로 설정해주시면 됩니다.
@@ -98,6 +100,10 @@ http {
 
 * [brew](http://brew.sh/)(OS X 패키지 관리)
 * [nginx](http://nginx.org/)(웹 서버)
+
+# 지원 OS 버전
+
+OS X 10.9(Mavericks) 이상
 
 # 변경이력
 
