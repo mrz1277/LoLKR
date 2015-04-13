@@ -33,6 +33,7 @@
 
 ## 2. 패치 시작 
 ![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png) 
+
 * 기본 롤 경로(/응용 프로그램/League of Legends)가 아니신 분들은 별도로 설정해주세요.
 * `brew`를 이용해서 로컬에 nginx를 설치합니다. 이미 설치가 되신 분들은 포트만 겹치지 않게 nginx.conf 파일만 아래와 같이 따로 설정해주시면 됩니다.
 ```
@@ -81,6 +82,8 @@ http {
 ![완료 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-3.png)
 
 ## 3. 업데이트 스위치
+![스위치](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/switch.png)
+
 평소 자동 업데이트 방지에 스위치를 켜두고 있다가, 한국 서버가 정상적으로 업데이트 되면 그때 스위치를 잠시 끄고 롤을 실행하면 클라이언트가 정상적으로 업데이트됩니다. 업데이트가 완료되면 다시 스위치를 키고 자동 업데이트 방지에 두고 플레이 하시면 됩니다.
 
 # 동작 화면
