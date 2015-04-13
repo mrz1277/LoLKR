@@ -28,7 +28,7 @@
 
 # 사용법
 
-## 1. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/tag/v1.0)
+## 1. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/tag/v1.0/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
 
 ## 2. 패치 시작 
@@ -96,8 +96,8 @@ http {
 
 # 자동으로 설치되는 프로그램
 
-* brew(OS X 패키지 관리)
-* nginx(웹 서버)
+* [brew](http://brew.sh/)(OS X 패키지 관리)
+* [nginx](http://nginx.org/)(웹 서버)
 
 # 변경이력
 
