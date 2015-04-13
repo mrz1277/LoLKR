@@ -89,7 +89,7 @@
                             <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="Xzk-5z-Jzp">
                                 <rect key="frame" x="47" y="301" width="389" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="JC1-1p-nnQ">
+                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" refusesFirstResponder="YES" alignment="left" pathStyle="popUp" id="JC1-1p-nnQ">
                                     <font key="font" metaFont="smallSystem"/>
                                     <url key="url" string="file:///Applications/League%20of%20Legends.app/"/>
                                     <allowedTypes>
@@ -127,11 +127,11 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="설치합니다. (주의! /usr/local/etc/nginx/nginx.conf 파일 덮어씀)" imagePosition="left" alignment="left" controlSize="small" state="on" tag="1" inset="2" id="lG7-FR-SKF">
+                                        <buttonCell type="radio" title="설치합니다. (주의! /usr/local/etc/nginx/nginx.conf 파일 덮어씀)" imagePosition="left" alignment="left" controlSize="small" refusesFirstResponder="YES" state="on" tag="1" inset="2" id="lG7-FR-SKF">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="이미 설치되어 있으므로 설치하지 않습니다. (설정파일은 Github 참고)" imagePosition="left" alignment="left" controlSize="small" inset="2" id="D2i-oW-6ax">
+                                        <buttonCell type="radio" title="이미 설치되어 있으므로 설치하지 않습니다. (설정파일은 Github 참고)" imagePosition="left" alignment="left" controlSize="small" refusesFirstResponder="YES" inset="2" id="D2i-oW-6ax">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
@@ -322,13 +322,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="lG9-Qm-DCC">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="329" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="329" height="133"/>
+                                            <size key="minSize" width="314" height="133"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="329" height="133"/>
+                                            <size key="minSize" width="314" height="133"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>

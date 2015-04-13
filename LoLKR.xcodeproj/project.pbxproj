@@ -13,6 +13,7 @@
 		B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */; };
 		B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B58001AD6A6B2006558AA /* 3_lol.sh */; };
 		B65832AD1ACDBB3800B781E2 /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B65832AC1ACDBB3800B781E2 /* ITSwitch.m */; };
+		B66000D41ADC393D00C18BB9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B66000D31ADC393D00C18BB9 /* LICENSE */; };
 		B67E1D5A1AC68578003FA730 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D591AC68578003FA730 /* AppDelegate.m */; };
 		B67E1D5C1AC68578003FA730 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D5B1AC68578003FA730 /* main.m */; };
 		B67E1D5F1AC68578003FA730 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E1D5E1AC68578003FA730 /* ViewController.m */; };
@@ -44,7 +45,9 @@
 		B61B58001AD6A6B2006558AA /* 3_lol.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 3_lol.sh; sourceTree = "<group>"; };
 		B65832AB1ACDBB3800B781E2 /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
 		B65832AC1ACDBB3800B781E2 /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
-		B67E1D531AC68578003FA730 /* 롤 한글 패치.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "롤 한글 패치.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66000D31ADC393D00C18BB9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B66000D51ADC39C200C18BB9 /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = screenshots; sourceTree = "<group>"; };
+		B67E1D531AC68578003FA730 /* 롤 한국 서버 패치.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "롤 한국 서버 패치.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67E1D571AC68578003FA730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67E1D581AC68578003FA730 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B67E1D591AC68578003FA730 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 		B67E1D4A1AC68578003FA730 = {
 			isa = PBXGroup;
 			children = (
+				B66000D51ADC39C200C18BB9 /* screenshots */,
+				B66000D31ADC393D00C18BB9 /* LICENSE */,
 				B60AFEA01ADBED72008A6547 /* README.md */,
 				B67E1D551AC68578003FA730 /* LoLKR */,
 				B67E1D6C1AC68578003FA730 /* LoLKRTests */,
@@ -125,7 +130,7 @@
 		B67E1D541AC68578003FA730 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B67E1D531AC68578003FA730 /* 롤 한글 패치.app */,
+				B67E1D531AC68578003FA730 /* 롤 한국 서버 패치.app */,
 				B67E1D691AC68578003FA730 /* LoLKRTests.xctest */,
 			);
 			name = Products;
@@ -203,7 +208,7 @@
 			);
 			name = LoLKR;
 			productName = LoLKR;
-			productReference = B67E1D531AC68578003FA730 /* 롤 한글 패치.app */;
+			productReference = B67E1D531AC68578003FA730 /* 롤 한국 서버 패치.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B67E1D681AC68578003FA730 /* LoLKRTests */ = {
@@ -273,6 +278,7 @@
 				B67E1D611AC68578003FA730 /* Images.xcassets in Resources */,
 				B60AFEA11ADBED72008A6547 /* README.md in Resources */,
 				B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */,
+				B66000D41ADC393D00C18BB9 /* LICENSE in Resources */,
 				B67E1D641AC68578003FA730 /* Main.storyboard in Resources */,
 				B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */,
 			);
@@ -449,7 +455,7 @@
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "롤 한글 패치";
+				PRODUCT_NAME = "롤 한국 서버 패치";
 			};
 			name = Debug;
 		};
@@ -463,7 +469,7 @@
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "롤 한글 패치";
+				PRODUCT_NAME = "롤 한국 서버 패치";
 			};
 			name = Release;
 		};
