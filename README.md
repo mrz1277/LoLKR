@@ -28,7 +28,7 @@
 
 # 사용법
 
-## 1. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/tag/v1.0/LoLKR.zip)
+## 1. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/v1.0/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
 
 ## 2. 패치 시작 
