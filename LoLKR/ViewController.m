@@ -108,6 +108,8 @@
     progress.hidden = NO;
     [progress startAnimation:nil];
     
+    __block BOOL success = YES;
+    
     dispatch_promise(^{
         if ([[[noti userInfo] objectForKey:@"install_nginx"] boolValue]) {
             return [self runScript:@"1_nginx" arguments:@[[[NSUserDefaults standardUserDefaults] objectForKey:@"port1"],
@@ -124,6 +126,7 @@
             
             return [self runScript:@"2_download_versions" arguments:@[]];
         } else {
+            success = NO;
             return [NSNumber numberWithInt:-1];
         }
     }).thenInBackground(^(NSNumber *status) {
@@ -141,15 +144,21 @@
                     textView.string = [textView.string stringByAppendingString:@"완료\n\n"];
                     [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
                 });
+            } else {
+                success = NO;
             }
+        } else {
+            success = NO;
         }
     }).finally(^{
         [progress stopAnimation:nil];
         patchAllButton.enabled = YES;
         itSwitch.enabled = YES;
         
-        textView.string = [textView.string stringByAppendingString:@"한글 패치가 모두 완료되었습니다. 롤을 다시 실행해 주세요.\n\n"];
-        [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+        if (success) {
+            textView.string = [textView.string stringByAppendingString:@"한글 패치가 모두 완료되었습니다. 롤을 다시 실행해 주세요.\n\n"];
+            [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+        }
     });
 }
 

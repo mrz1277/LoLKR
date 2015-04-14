@@ -15,15 +15,15 @@ if [ "$#" -ne 2 ]; then
 fi
 
 # install
-if hash /usr/local/bin/brew 2>/dev/null; then
+if type /usr/local/bin/brew 2>/dev/null; then
     /usr/local/bin/brew update && /usr/local/bin/brew install nginx
 else
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    /usr/local/bin/brew install nginx
+    echo "터미널에 다음 커맨드를 복사해서 brew를 먼저 설치해주세요. ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+    exit 1
 fi
 
 # exceptions
-if ! hash /usr/local/bin/nginx 2>/dev/null; then
+if ! type /usr/local/bin/nginx 2>/dev/null; then
     echo "nginx가 설치되지 않았습니다."
     exit 1
 fi

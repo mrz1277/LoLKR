@@ -26,12 +26,20 @@
 
 # 사용법
 
-## 1. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/v1.0/LoLKR.zip)
+## 1. [brew](http://brew.sh/) 설치
+
+먼저 `brew`(OS X 패키지 관리자)가 설치 안되어 있으신 분들은 설치해 주셔야 합니다. 앱에서 `brew`를 이용해서 `nginx`(웹서버)를 자동으로 설치합니다.
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다.
+
+## 2. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/v1.0/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
 
 '패치 하기' 버튼을 눌러주세요.
 
-## 2. 패치 시작 
+## 3. 패치 시작 
 ![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png) 
 
 대부분은 그냥 확인 버튼을 누르시면 됩니다.
@@ -83,7 +91,7 @@ http {
 패치가 완료되면 롤을 다시 시작해주세요.
 ![완료 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-3.png)
 
-## 3. 업데이트 스위치
+## 4. 업데이트 스위치
 ![스위치](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/switch.png)
 
 평소 자동 업데이트 방지에 스위치를 켜두고 있다가, 한국 서버가 정상적으로 업데이트 되면 그때 스위치를 잠시 끄고 롤을 실행하면 클라이언트가 정상적으로 업데이트됩니다. 업데이트가 완료되면 다시 스위치를 키고 자동 업데이트 방지에 두고 플레이 하시면 됩니다.
@@ -97,11 +105,6 @@ http {
 
 * 인터넷에 떠도는 오래된 `lol.properties` 파일 내용을 수정해서 로비 화면(기존 찾을 수 없음 404)도 정상적으로 보이게 했습니다.
 ![로비](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/lobby.png)
-
-# 자동으로 설치되는 프로그램
-
-* [brew](http://brew.sh/)(OS X 패키지 관리)
-* [nginx](http://nginx.org/)(웹 서버)
 
 # 지원 OS 버전
 
