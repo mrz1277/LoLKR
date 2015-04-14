@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>LoLKR by mrz1277</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">LoLKR</h1>
+      <h2 class="project-tagline">Mac OS X 리그 오브 레전드 비공식 한국 서버 패치 (+ 언어 패치)</h2>
+      <a href="https://github.com/mrz1277/LoLKR" class="btn">View on GitHub</a>
+      <a href="https://github.com/mrz1277/LoLKR/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mrz1277/LoLKR/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/icon.png" alt="icon"></p>
+
+<h1>
+<a id="문제" class="anchor" href="#%EB%AC%B8%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>문제</h1>
+
+<ul>
+<li><a href="http://www.leagueoflegends.co.kr/?m=forum&amp;mod=view&amp;mod_context=topic&amp;topic_id=7&amp;thread_id=270482">한국서버 Mac OS X 지원 관련 질문 - 리그 오브 레전드 공식 홈페이지에서 조회수 약 36,000, 댓글 156, 추천 237건을 받은 글</a></li>
+</ul>
+
+<p>요약하자면 한국 맥 유저는 롤을 정상적인 경로로는 플레이 할 수 없습니다. 
+공식적으로 지원되는 게임 클라이언트의 운영체제가 한국은 윈도우 밖에 없기 때문이죠. 
+이에 대한 정확한 이유는 잘 모르겠으나 아마 결제 관련 문제 때문이 아닐까 싶습니다.</p>
+
+<h1>
+<a id="기존의-문제-해결-방법" class="anchor" href="#%EA%B8%B0%EC%A1%B4%EC%9D%98-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>기존의 문제 해결 방법</h1>
+
+<p>그러나 기존 맥 클라이언트를 가지고 서버 주소만 한국으로 바꿔주면 이용할 수 있는데, 이게 기존에 알려진 <code>lol.properties</code> 파일을 수정하는 방법입니다. 하지만 이 방법엔 다음과 같은 한계가 있는데요,</p>
+
+<ol>
+<li>파일을 변조한 원래의 서버(예를 들면 북미 혹은 오세아니아)를 동시에 이용하지 못함.</li>
+<li>외국 서버가 업데이트 되면 한국 서버가 업데이트 될 때까지 게임을 할 수 없음.</li>
+</ol>
+
+<p>이 중에서도 2번이 특히 불편합니다. 보통 한국이 북미보다 업데이트가 보통 3-4일 정도 늦기 때문에 그 동안 게임을 즐길 수 없죠. 그래서 어떤 사람들은 애초에 패럴러즈나 부트캠프에서 게임을 즐기기도 합니다. 이 문제를 해결하기 위해서는 Riot 에서 한국 서버에 맞는 업데이트 서버를 제공해야 합니다. 그렇지 않다면 약간의 꼼수를 쓰거나.</p>
+
+<h1>
+<a id="해결" class="anchor" href="#%ED%95%B4%EA%B2%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>해결</h1>
+
+<p>그렇다면 북미서버가 업데이트 되어도 한국서버가 업데이트 될 때까지 클라 업데이트를 지연시키면 되지 않을까요?
+로컬에 웹서버를 두고 롤 업데이트 서버주소를 로컬로 바라보게 하였습니다.
+몇 가지 필요한 작업을 해주고 나니 외국 서버 업데이트가 진행되어도 한국 서버에 접속할 수 있게 되었습니다.
+그리고 한국 서버가 업데이트 되고 나면 원래대로 클라 업데이트를 진행시켰습니다.</p>
+
+<h1>
+<a id="사용법" class="anchor" href="#%EC%82%AC%EC%9A%A9%EB%B2%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>사용법</h1>
+
+<h2>
+<a id="1-brew-설치" class="anchor" href="#1-brew-%EC%84%A4%EC%B9%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. <a href="http://brew.sh/">brew</a> 설치</h2>
+
+<p>먼저 <code>brew</code>(OS X 패키지 관리자)가 설치 안되어 있으신 분들은 설치해 주셔야 합니다. 앱에서 <code>brew</code>를 이용해서 <code>nginx</code>(웹서버)를 자동으로 설치합니다.</p>
+
+<pre><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></pre>
+
+<p>터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다.</p>
+
+<h2>
+<a id="2-앱-다운로드" class="anchor" href="#2-%EC%95%B1-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. 앱 <a href="https://github.com/mrz1277/LoLKR/releases/download/v1.0/LoLKR.zip">다운로드</a>
+</h2>
+
+<p><img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png" alt="앱 구동 화면"></p>
+
+<p>'패치 하기' 버튼을 눌러주세요.</p>
+
+<h2>
+<a id="3-패치-시작" class="anchor" href="#3-%ED%8C%A8%EC%B9%98-%EC%8B%9C%EC%9E%91" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. 패치 시작</h2>
+
+<p><img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png" alt="설정화면"> </p>
+
+<p>대부분은 그냥 확인 버튼을 누르시면 됩니다.</p>
+
+<ul>
+<li>기본 롤 경로(/응용 프로그램/League of Legends)가 아니신 분들은 별도로 설정해주세요.</li>
+<li>
+<code>brew</code>를 이용해서 로컬에 nginx를 설치합니다. 이미 설치가 되신 분들은 포트만 겹치지 않게 nginx.conf 파일만 아래와 같이 따로 설정해주시면 됩니다.</li>
+</ul>
+
+<pre><code>worker_processes    1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  text/plain;
+
+    # disable auto-update
+    server {
+        listen       8010;
+        server_name  localhost;
+
+        location / {
+            root        html;
+            try_files   $uri $uri/ @cdn;
+        }
+
+        location @cdn {
+            proxy_pass  http://l3cdn.riotgames.com;
+        }
+    }
+
+    # enable auto-update
+    server {
+        listen      8020;
+        server_name localhost;
+
+        rewrite      ^(.*)_KR$        $1_NA;
+        rewrite      ^(.*)_kr/(.*)$   $1_na/\$2;
+
+        location / {
+            proxy_pass  http://l3cdn.riotgames.com;
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>마지막 포트번호는 로컬에 8010이나 8020을 이미 사용하시는 분들은 다른 임의의 포트번호를 입력해주시면 됩니다.</li>
+</ul>
+
+<p>패치가 완료되면 롤을 다시 시작해주세요.</p>
+
+<p><img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-3.png" alt="완료 화면"></p>
+
+<h2>
+<a id="4-업데이트-스위치" class="anchor" href="#4-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%EC%8A%A4%EC%9C%84%EC%B9%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. 업데이트 스위치</h2>
+
+<p><img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/switch.png" alt="스위치"></p>
+
+<p>평소 자동 업데이트 방지에 스위치를 켜두고 있다가, 한국 서버가 정상적으로 업데이트 되면 그때 스위치를 잠시 끄고 롤을 실행하면 클라이언트가 정상적으로 업데이트됩니다. 업데이트가 완료되면 다시 스위치를 키고 자동 업데이트 방지에 두고 플레이 하시면 됩니다.</p>
+
+<h1>
+<a id="추가-기능" class="anchor" href="#%EC%B6%94%EA%B0%80-%EA%B8%B0%EB%8A%A5" aria-hidden="true"><span class="octicon octicon-link"></span></a>추가 기능</h1>
+
+<ul>
+<li>서버 목록에 대한민국이 별도로 추가된 모습. 언어도 기호에 맞게 한글/영어를 선택할 수 있게 추가했습니다.
+<img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/server.png" alt="서버목록">
+</li>
+</ul>
+
+<p>참고! 다른 지역 서버에도 정상적으로 접속하시려면 이전에 변경하신 <code>lol.properties</code> 파일을 원래대로 복구하셔야 합니다.</p>
+
+<ul>
+<li>인터넷에 떠도는 오래된 <code>lol.properties</code> 파일 내용을 수정해서 로비 화면(기존 찾을 수 없음 404)도 정상적으로 보이게 했습니다.
+<img src="https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/lobby.png" alt="로비">
+</li>
+</ul>
+
+<h1>
+<a id="지원-os-버전" class="anchor" href="#%EC%A7%80%EC%9B%90-os-%EB%B2%84%EC%A0%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>지원 OS 버전</h1>
+
+<p>OS X 10.9(Mavericks) 이상</p>
+
+<h1>
+<a id="변경이력" class="anchor" href="#%EB%B3%80%EA%B2%BD%EC%9D%B4%EB%A0%A5" aria-hidden="true"><span class="octicon octicon-link"></span></a>변경이력</h1>
+
+<ul>
+<li>2015-04-14 : v1.0 배포</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mrz1277/LoLKR">LoLKR</a> is maintained by <a href="https://github.com/mrz1277">mrz1277</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-56819167-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
