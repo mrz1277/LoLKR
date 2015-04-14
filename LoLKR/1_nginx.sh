@@ -18,7 +18,7 @@ fi
 if type /usr/local/bin/brew 2>/dev/null; then
     /usr/local/bin/brew update && /usr/local/bin/brew install nginx
 else
-    echo "터미널에 다음 커맨드를 복사해서 brew를 먼저 설치해주세요. ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+    echo "터미널에 다음 커맨드를 복사해서 brew를 먼저 설치해주세요. ruby -e \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
     exit 1
 fi
 
