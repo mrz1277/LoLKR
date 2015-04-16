@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>롤 한국 서버 패치</title>
+        <link>https://raw.githubusercontent.com/mrz1277/LoLKR/master/updates.xml</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>kr</language>
+    </channel>
+</rss>

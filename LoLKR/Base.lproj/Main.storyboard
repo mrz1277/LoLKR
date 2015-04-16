@@ -22,7 +22,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="환경설정…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="업데이트 확인" id="BOF-NM-1cW">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="sYK-Fa-v5p" id="5dZ-iW-VlE"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="가리기" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
@@ -57,6 +62,7 @@
                     </connections>
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
+                <customObject id="sYK-Fa-v5p" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -325,10 +331,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="329" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="314" height="133"/>
+                                            <size key="minSize" width="329" height="133"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="314" height="133"/>
+                                            <size key="minSize" width="329" height="133"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>
