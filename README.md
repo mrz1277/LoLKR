@@ -97,6 +97,7 @@ http {
 * 마지막 포트번호는 로컬에 8010이나 8020을 이미 사용하시는 분들은 다른 임의의 포트번호를 입력해주시면 됩니다.
 
 패치가 완료되면 롤을 다시 시작해주세요.
+
 ![완료 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-3.png)
 
 ## 4. 업데이트 스위치
@@ -124,7 +125,7 @@ http {
 
 ![에러 한글](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-2.png) ![에러 영어](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-1.png)
 
-`nginx`가 제대로 실행되고 있는지 확인해 주세요. `LoLKR` 앱을 켰을때 nginx 부분이 회색이면 실해되고 있지 않다는 뜻입니다.
+`nginx`가 제대로 실행되고 있는지 확인해 주세요. `LoLKR` 앱을 켰을때 nginx 부분이 회색이면 실행되고 있지 않다는 뜻입니다.
 
 ![nginx](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/nginx.png)
 
