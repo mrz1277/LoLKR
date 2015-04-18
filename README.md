@@ -1,5 +1,7 @@
 ![icon](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/icon.png)
 
+# [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
+
 # 문제
 
 * [한국서버 Mac OS X 지원 관련 질문 - 리그 오브 레전드 공식 홈페이지에서 조회수 약 36,000, 댓글 156, 추천 237건을 받은 글](http://www.leagueoflegends.co.kr/?m=forum&mod=view&mod_context=topic&topic_id=7&thread_id=270482)
@@ -24,6 +26,12 @@
 몇 가지 필요한 작업을 해주고 나니 외국 서버 업데이트가 진행되어도 한국 서버에 접속할 수 있게 되었습니다.
 그리고 한국 서버가 업데이트 되고 나면 원래대로 클라 업데이트를 진행시켰습니다.
 
+이 작업을 위해 필요한 과정들을 스크립트로 만들고 이를 다시 앱으로 패키징 하였습니다.
+기존의 알려진 방법들과 비교해서 더 나은 점들은 다음과 같습니다.
+
+1. 사용자가 직접 파일을 찾고 수정할 필요가 없다.
+2. Riot 공식 지원 클라이언트 처럼 쓸 수 있다.([추가기능](#%EC%B6%94%EA%B0%80-%EA%B8%B0%EB%8A%A5) 참조)
+
 # 사용법
 
 ## 1. [brew](http://brew.sh/) 설치
@@ -34,7 +42,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다.
 
-## 2. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/v1.0/LoLKR.zip)
+## 2. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
 
 '패치 하기' 버튼을 눌러주세요.
@@ -44,8 +52,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 대부분은 그냥 확인 버튼을 누르시면 됩니다.
 
-* 기본 롤 경로(/응용 프로그램/League of Legends)가 아니신 분들은 별도로 설정해주세요.
-* `brew`를 이용해서 로컬에 nginx를 설치합니다. 이미 설치가 되신 분들은 포트만 겹치지 않게 nginx.conf 파일만 아래와 같이 따로 설정해주시면 됩니다.
+* 기본 롤 경로(`/Applications/League of Legends`)가 아니신 분들은 별도로 설정해주세요.
+* `brew`를 이용해서 로컬에 `nginx`를 설치합니다. 이미 설치가 되신 분들은 포트만 겹치지 않게 `/usr/local/etc/nginx/nginx.conf` 파일만 아래와 같이 따로 설정해주시면 됩니다. 단, `brew`로 설치한 `nginx`만 해당합니다. 다른 방법으로 설치한 `nginx`는 경로를 제대로 잡지 못하니 주의하세요.
 ```
 worker_processes    1;
 
@@ -94,16 +102,20 @@ http {
 ## 4. 업데이트 스위치
 ![스위치](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/switch.png)
 
-평소 자동 업데이트 방지에 스위치를 켜두고 있다가, 한국 서버가 정상적으로 업데이트 되면 그때 스위치를 잠시 끄고 롤을 실행하면 클라이언트가 정상적으로 업데이트됩니다. 업데이트가 완료되면 다시 스위치를 키고 자동 업데이트 방지에 두고 플레이 하시면 됩니다.
+평소 자동 업데이트 방지에 스위치를 켜두고 있다가, 한국 서버가 정상적으로 업데이트 되면 그때 스위치를 잠시 끄고 롤을 실행하면 클라이언트가 정상적으로 업데이트됩니다. 업데이트가 완료되면 다시 스위치를 켜고 자동 업데이트 방지에 두고 플레이 하시면 됩니다.
 
 # 추가 기능
 
-* 서버 목록에 대한민국이 별도로 추가된 모습. 언어도 기호에 맞게 한글/영어를 선택할 수 있게 추가했습니다.
+아래의 추가기능들은 위에서 소개한 주 기능인 가상 한국 업데이트 서버 패치 이외에 부가적으로 패치되는 것들입니다. 간단하지만 그동안 다른 어떤 솔루션에서도 다루지 않았던 기능들입니다.
+
+* 지역 목록에 대한민국이 별도로 추가 되었습니다. 다른 지역도 언제든 바꿔서 접속 가능합니다. 언어도 기호에 맞게 한글/영어를 선택할 수 있게 추가했습니다.
+
 ![서버목록](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/server.png)
 
-참고! 다른 지역 서버에도 정상적으로 접속하시려면 이전에 변경하신 `lol.properties` 파일을 원래대로 복구하셔야 합니다.
+참고! 다른 지역 서버에도 정상적으로 접속하시려면 이전에 변경하신 `lol.properties` 파일이 있다면 원래대로 복구하셔야 합니다.
 
-* 인터넷에 떠도는 오래된 `lol.properties` 파일 내용을 수정해서 로비 화면(기존 찾을 수 없음 404)도 정상적으로 보이게 했습니다.
+* 더이상 404 페이지는 그만. 인터넷에 떠도는 오래된 `lol.properties` 파일 내용을 업데이트해서 로비 화면을 윈도우에서처럼 정상적으로 보이게 했습니다.
+
 ![로비](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/lobby.png)
 
 # 자주 하는 질문
@@ -128,4 +140,5 @@ OS X 10.9(Mavericks) 이상
 
 # 변경이력
 
+* 2015-04-17 : v1.1 업데이트 지원
 * 2015-04-14 : v1.0 배포

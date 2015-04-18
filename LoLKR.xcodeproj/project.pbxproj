@@ -23,6 +23,7 @@
 		B69F06A21AD735B2005802FA /* update.sh in Resources */ = {isa = PBXBuildFile; fileRef = B69F06A11AD735B2005802FA /* update.sh */; };
 		B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */; };
 		B6F35B441AD9C4D100DED4C8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */; };
+		B6FE8E891ADFF84C00F0C7E3 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B6FE8E881ADFF84C00F0C7E3 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		B65832AB1ACDBB3800B781E2 /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
 		B65832AC1ACDBB3800B781E2 /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
 		B66000D31ADC393D00C18BB9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		B66000D51ADC39C200C18BB9 /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = screenshots; sourceTree = "<group>"; };
 		B67E1D531AC68578003FA730 /* 롤 한국 서버 패치.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "롤 한국 서버 패치.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67E1D571AC68578003FA730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67E1D581AC68578003FA730 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +63,7 @@
 		B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		B6F35B421AD9C4D100DED4C8 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		B6F35B431AD9C4D100DED4C8 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		B6FE8E881ADFF84C00F0C7E3 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +117,6 @@
 		B67E1D4A1AC68578003FA730 = {
 			isa = PBXGroup;
 			children = (
-				B66000D51ADC39C200C18BB9 /* screenshots */,
 				B66000D31ADC393D00C18BB9 /* LICENSE */,
 				B60AFEA01ADBED72008A6547 /* README.md */,
 				B67E1D551AC68578003FA730 /* LoLKR */,
@@ -158,6 +158,7 @@
 			children = (
 				B61B57FB1AD69DA3006558AA /* scripts */,
 				B67E1D571AC68578003FA730 /* Info.plist */,
+				B6FE8E881ADFF84C00F0C7E3 /* dsa_pub.pem */,
 				B67E1D5B1AC68578003FA730 /* main.m */,
 				B6F35B401AD9C2DD00DED4C8 /* Credits.rtf */,
 			);
@@ -277,6 +278,7 @@
 				B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */,
 				B67E1D611AC68578003FA730 /* Images.xcassets in Resources */,
 				B60AFEA11ADBED72008A6547 /* README.md in Resources */,
+				B6FE8E891ADFF84C00F0C7E3 /* dsa_pub.pem in Resources */,
 				B6F35B411AD9C2DD00DED4C8 /* Credits.rtf in Resources */,
 				B66000D41ADC393D00C18BB9 /* LICENSE in Resources */,
 				B67E1D641AC68578003FA730 /* Main.storyboard in Resources */,
@@ -306,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n\nLOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Mac Developer: Jae Seong Gu (JX3RHMUU32)\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
 			showEnvVarsInLog = 0;
 		};
 		6F542155D9C57AEB94942905 /* Check Pods Manifest.lock */ = {
