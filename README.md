@@ -15,11 +15,11 @@
 그러나 기존 맥 클라이언트를 가지고 서버 주소만 한국으로 바꿔주면 이용할 수 있는데, 이게 기존에 알려진 `lol.properties` 파일을 수정하는 방법입니다. 하지만 이 방법엔 다음과 같은 한계가 있는데요,
 
 1. 파일을 변조한 원래의 서버(예를 들면 북미 혹은 오세아니아)를 동시에 이용하지 못함.
-2. 외국 서버가 업데이트 되면 한국 서버가 업데이트 될 때까지 게임을 할 수 없음.
+2. **외국 서버가 업데이트 되면 한국 서버가 업데이트 될 때까지 게임을 할 수 없음.**
 
 이 중에서도 2번이 특히 불편합니다. 보통 한국이 북미보다 업데이트가 보통 3-4일 정도 늦기 때문에 그 동안 게임을 즐길 수 없죠. 그래서 어떤 사람들은 애초에 패럴러즈나 부트캠프에서 게임을 즐기기도 합니다. 이 문제를 해결하기 위해서는 Riot 에서 한국 서버에 맞는 업데이트 서버를 제공해야 합니다. 그렇지 않다면 약간의 꼼수를 쓰거나.
 
-# 해결
+# 새로운 해결 방법
 
 그렇다면 북미서버가 업데이트 되어도 한국서버가 업데이트 될 때까지 클라 업데이트를 지연시키면 되지 않을까요?
 로컬에 웹서버를 두고 롤 업데이트 서버주소를 로컬로 바라보게 하였습니다.
@@ -36,7 +36,7 @@
 
 ## 1. [brew](http://brew.sh/) 설치
 
-먼저 `brew`(OS X 패키지 관리자)가 설치 안되어 있으신 분들은 설치해 주셔야 합니다. 앱에서 `brew`를 이용해서 `nginx`(웹서버)를 자동으로 설치합니다.
+먼저 `brew`(OS X 패키지 관리자)가 설치 안되어 있으신 분들은 설치해 주셔야 합니다. 그러고 나면 앱에서 `brew`를 이용해서 `nginx`(웹서버)를 자동으로 설치하게 됩니다.
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -48,7 +48,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 '패치 하기' 버튼을 눌러주세요.
 
 ## 3. 패치 시작 
-![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2-.png) 
+![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png) 
 
 대부분은 그냥 확인 버튼을 누르시면 됩니다.
 
@@ -119,11 +119,11 @@ http {
 
 ![로비](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/lobby.png)
 
-# 자주 하는 질문
+# 자주 묻는 질문
 
 ### *명시되지 않은 오류가 발생했다며 롤이 실행되지 않습니다.*
 
-![에러 한글](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-2.png) ![에러 영어](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-1.png)
+![명시되지 않은 에러](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-unspecified.png)
 
 `nginx`가 제대로 실행되고 있는지 확인해 주세요. `LoLKR` 앱을 켰을때 nginx 부분이 회색이면 실행되고 있지 않다는 뜻입니다.
 
@@ -134,6 +134,10 @@ http {
 ```
 nginx
 ```
+
+### *다른 문제가 생겼어요.*
+
+[이슈](https://github.com/mrz1277/LoLKR/issues)에 올려주세요.
 
 # 지원 OS 버전
 
