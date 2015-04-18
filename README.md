@@ -40,7 +40,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 '패치 하기' 버튼을 눌러주세요.
 
 ## 3. 패치 시작 
-![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png) 
+![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2-.png) 
 
 대부분은 그냥 확인 버튼을 누르시면 됩니다.
 
@@ -105,6 +105,22 @@ http {
 
 * 인터넷에 떠도는 오래된 `lol.properties` 파일 내용을 수정해서 로비 화면(기존 찾을 수 없음 404)도 정상적으로 보이게 했습니다.
 ![로비](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/lobby.png)
+
+# 자주 하는 질문
+
+### *명시되지 않은 오류가 발생했다며 롤이 실행되지 않습니다.*
+
+![에러 한글](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-2.png) ![에러 영어](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/error-1.png)
+
+`nginx`가 제대로 실행되고 있는지 확인해 주세요. `LoLKR` 앱을 켰을때 nginx 부분이 회색이면 실해되고 있지 않다는 뜻입니다.
+
+![nginx](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/nginx.png)
+
+'패치하기' 버튼을 눌러서 `nginx`을 실행할 수도 있고 터미널에서 아래 커맨드를 입력해서 별도로 실행할 수 도 있습나다.
+
+```
+nginx
+```
 
 # 지원 OS 버전
 
