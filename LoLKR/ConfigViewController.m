@@ -18,10 +18,6 @@
 
 @implementation ConfigViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 - (IBAction)done:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -35,7 +31,12 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"runAllScript" object:nil userInfo:@{@"install_nginx": [NSNumber numberWithBool:(self.nginxInstall.state != 0)]}];
     
-    [self dismissController:nil];
+    [self closeSheet:nil];
+}
+
+- (IBAction)closeSheet:(id)sender {
+    NSWindow *window = self.view.window;
+    [[window sheetParent] endSheet:window];
 }
 
 - (BOOL)validateCheck {

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="uBX-Fi-eMn" id="XBi-yf-jOW"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="BrZ-wy-IB1" customClass="SUUpdater"/>
+        <customObject id="uBX-Fi-eMn" customClass="AppDelegate"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="롤 한국 서버 패치" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="롤 한국 서버 패치" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="롤 한국 서버 패치에 관하여" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="업데이트 확인" id="Vvw-Pl-aiv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="BrZ-wy-IB1" id="hDz-wt-ip4"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                            <menuItem title="가리기" keyEquivalent="h" id="zyT-QI-KKO">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="r1k-tf-HIi"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="모두 보기" id="UU1-rh-UbX">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="S3d-bh-HzW"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="기타 가리기" keyEquivalent="h" id="9Er-vG-7fX">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="67q-JS-Vdy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="xWQ-FM-748"/>
+                            <menuItem title="종료" keyEquivalent="q" id="CkR-hm-S8I">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="tYw-IV-ViP"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="롤 한국 서버 패치" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="196" y="240" width="370" height="320"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="320"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view id="ZEK-tO-kku">
+                        <rect key="frame" x="-1" y="-1" width="371" height="322"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <progressIndicator hidden="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" id="jrM-ue-qAJ">
+                                <rect key="frame" x="20" y="146" width="331" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" id="SgW-gs-guw">
+                                <rect key="frame" x="14" y="111" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="패치 하기" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g3X-HL-4xH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="patchButtonPressed:" target="uhK-Tb-qyU" id="WUj-1g-XwQ"/>
+                                </connections>
+                            </button>
+                            <customView id="v9u-Yd-pLw" customClass="ITSwitch">
+                                <rect key="frame" x="151" y="20" width="69" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="switchValueChanged:" target="uhK-Tb-qyU" id="zre-Ie-8ML"/>
+                                </connections>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="efT-fd-ILX">
+                                <rect key="frame" x="226" y="20" width="31" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="🔒" id="DjE-AX-R9F">
+                                    <font key="font" metaFont="system" size="27"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="aku-OS-qJs">
+                                <rect key="frame" x="114" y="20" width="31" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="🔓" id="RBX-FK-qb1">
+                                    <font key="font" metaFont="system" size="27"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OSJ-N1-r62">
+                                <rect key="frame" x="258" y="29" width="24" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="방지" id="sJJ-SD-Vvh">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="SBt-RJ-0FI">
+                                <rect key="frame" x="86" y="29" width="24" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="허용" id="kts-kD-rcB">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sao-nX-qZy">
+                                <rect key="frame" x="18" y="62" width="335" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="롤 자동 업데이트" id="aNZ-Ox-nBx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="UFh-Wz-Ve4">
+                                <rect key="frame" x="20" y="173" width="331" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="5uI-gi-rjs">
+                                    <rect key="frame" x="1" y="1" width="329" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Cwv-mL-z9L">
+                                            <rect key="frame" x="0.0" y="0.0" width="329" height="133"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="314" height="133"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="314" height="133"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="nXY-dO-2eU">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IEm-XT-bhh">
+                                    <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MpV-79-5BE">
+                                <rect key="frame" x="154" y="87" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="QO7-dH-tzd"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="N7q-gx-U5F">
+                                <rect key="frame" x="180" y="90" width="38" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="nginx" id="dJ0-Zy-Cv0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="270" y="609"/>
+        </window>
+        <viewController id="uhK-Tb-qyU" customClass="ViewController">
+            <connections>
+                <outlet property="configViewController" destination="kVd-Cy-FJV" id="IKM-FN-zs4"/>
+                <outlet property="itSwitch" destination="v9u-Yd-pLw" id="wgN-2O-pAL"/>
+                <outlet property="nginxImageView" destination="MpV-79-5BE" id="1e5-cv-gQp"/>
+                <outlet property="patchAllButton" destination="SgW-gs-guw" id="7pn-8O-cZ9"/>
+                <outlet property="progress" destination="jrM-ue-qAJ" id="rmR-Ij-Y9w"/>
+                <outlet property="textView" destination="Cwv-mL-z9L" id="uYx-9U-oqo"/>
+                <outlet property="view" destination="ZEK-tO-kku" id="ztA-sJ-G5c"/>
+            </connections>
+        </viewController>
+        <view id="AdE-9u-XOJ">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="0Xt-W4-6Jp">
+                    <rect key="frame" x="46" y="263" width="389" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" refusesFirstResponder="YES" alignment="left" pathStyle="popUp" id="8Ts-E9-6fL">
+                        <font key="font" metaFont="smallSystem"/>
+                        <url key="url" string="file:///Applications/League%20of%20Legends.app/"/>
+                        <allowedTypes>
+                            <string>app</string>
+                        </allowedTypes>
+                    </pathCell>
+                </pathControl>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3Sc-n1-Tef">
+                    <rect key="frame" x="47" y="286" width="69" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="롤 설치 경로" id="EvT-WZ-NDC">
+                        <font key="font" metaFont="smallSystemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Bfu-cW-oQ3">
+                    <rect key="frame" x="47" y="231" width="160" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="nginx 웹서버 설치" id="GPk-cr-Ql6">
+                        <font key="font" metaFont="smallSystemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" id="Uhu-g6-2Ez">
+                    <rect key="frame" x="49" y="163" width="344" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    <size key="cellSize" width="329" height="18"/>
+                    <size key="intercellSpacing" width="4" height="2"/>
+                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="Tkr-tB-vyA">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <cells>
+                        <column>
+                            <buttonCell type="radio" title="설치합니다. (주의! /usr/local/etc/nginx/nginx.conf 파일 덮어씀)" imagePosition="left" alignment="left" controlSize="small" refusesFirstResponder="YES" state="on" tag="1" inset="2" id="EWS-Fx-DEL">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                            <buttonCell type="radio" title="이미 설치되어 있으므로 설치하지 않습니다. (설정파일은 Github 참고)" imagePosition="left" alignment="left" controlSize="small" refusesFirstResponder="YES" inset="2" id="aDN-QB-csi">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                        </column>
+                    </cells>
+                </matrix>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="dzz-mk-ddq">
+                    <rect key="frame" x="47" y="128" width="160" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="nginx 포트 설정(선택)" id="ld7-VB-ICl">
+                        <font key="font" metaFont="smallSystemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="kAe-CR-lfQ">
+                    <rect key="frame" x="141" y="84" width="96" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="8010" drawsBackground="YES" id="4pJ-hO-sK7">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FhE-Dd-Exe">
+                    <rect key="frame" x="47" y="86" width="88" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="업데이트 허용 포트" id="QFK-vJ-1jk">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="Z6k-Kf-nCu">
+                    <rect key="frame" x="141" y="59" width="96" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="8020" drawsBackground="YES" id="Sp1-jd-5Oa">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wLn-HB-IbW">
+                    <rect key="frame" x="47" y="61" width="88" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="업데이트 금지 포트" id="ScN-uD-7jm">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="j89-hP-1fm">
+                    <rect key="frame" x="47" y="109" width="387" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="기존에 사용하고 있지 않은 포트 2개가 필요합니다. 기본값은 각각 8010, 8020 입니다." id="s0Z-FL-Zud">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="k9Y-Sg-Aaf">
+                    <rect key="frame" x="47" y="209" width="346" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="롤 업데이트 서버를 우회하기 위해 로컬에 웹서버가 필요합니다." id="QnN-oq-RYz">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" id="F3Q-eC-qCr">
+                    <rect key="frame" x="288" y="10" width="80" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="확인" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wFy-wH-7WF">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="done:" target="kVd-Cy-FJV" id="uyh-IT-L75"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="enz-dR-tZJ">
+                    <rect key="frame" x="366" y="10" width="80" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="취소" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="48V-hD-TFp">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="closeSheet:" target="kVd-Cy-FJV" id="144-IS-WXl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="743" y="592"/>
+        </view>
+        <customObject id="kVd-Cy-FJV" customClass="ConfigViewController">
+            <connections>
+                <outlet property="nginxInstall" destination="EWS-Fx-DEL" id="vWP-wl-fBa"/>
+                <outlet property="pathControl" destination="0Xt-W4-6Jp" id="U7k-Pr-54G"/>
+                <outlet property="port1TextField" destination="kAe-CR-lfQ" id="aLU-oS-Z0K"/>
+                <outlet property="port2TextField" destination="Z6k-Kf-nCu" id="kDr-9p-BUM"/>
+                <outlet property="view" destination="AdE-9u-XOJ" id="qeb-sU-6Hy"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="NSStatusNone" width="16" height="16"/>
+    </resources>
+</document>

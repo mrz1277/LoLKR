@@ -426,7 +426,7 @@ static CGFloat const kDisabledOpacity = 0.5f;
 	else if ([attribute isEqualToString:NSAccessibilityValueAttribute])
 		retVal = [NSNumber numberWithInt:self.isOn];
 	else if ([attribute isEqualToString:NSAccessibilityEnabledAttribute])
-		retVal = [NSNumber numberWithBool:self.enabled];
+		retVal = [NSNumber numberWithBool:[self isEnabled]];
 	else
 		retVal = [super accessibilityAttributeValue:attribute];
 	return retVal;

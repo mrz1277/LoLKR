@@ -17,10 +17,11 @@
     __weak IBOutlet NSButton *patchAllButton;
     __weak IBOutlet NSProgressIndicator *progress;
     __unsafe_unretained IBOutlet NSTextView *textView;
+    __weak IBOutlet NSViewController *configViewController;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)awakeFromNib {
+    [super awakeFromNib];
     
     [progress stopAnimation:nil];
     
@@ -34,6 +35,14 @@
     [itSwitch setOn:[[[NSUserDefaults standardUserDefaults] objectForKey:@"block_update"] boolValue]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(runAllScripts:) name:@"runAllScript" object:nil];
+}
+
+- (IBAction)patchButtonPressed:(id)sender {
+    NSWindow *window = [[NSWindow alloc] init];
+    [window setContentView:configViewController.view];
+    [window setFrame:NSMakeRect(0, 0, 480, 340) display:YES];
+    
+    [self.view.window beginSheet:window completionHandler:nil];
 }
 
 - (IBAction)switchValueChanged:(id)sender {
@@ -173,7 +182,6 @@
     
     NSPipe *pipe = [NSPipe pipe];
     [task setStandardOutput: pipe];
-//    [task setStandardError: pipe];
     
     [[pipe fileHandleForReading] waitForDataInBackgroundAndNotify];
     [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:[pipe fileHandleForReading] queue:nil usingBlock:^(NSNotification *notification){
