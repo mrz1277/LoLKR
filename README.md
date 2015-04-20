@@ -2,6 +2,10 @@
 
 # [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 
+* 2015-04-21 : v1.2 10.9(Mavericks)에서 창이 안뜨는 문제 해결
+* 2015-04-17 : v1.1 업데이트 지원
+* 2015-04-14 : v1.0 배포
+
 # 문제
 
 * [한국서버 Mac OS X 지원 관련 질문 - 리그 오브 레전드 공식 홈페이지에서 조회수 약 36,000, 댓글 156, 추천 237건을 받은 글](http://www.leagueoflegends.co.kr/?m=forum&mod=view&mod_context=topic&topic_id=7&thread_id=270482)
@@ -142,9 +146,3 @@ nginx
 # 지원 OS 버전
 
 OS X 10.9(Mavericks) 이상
-
-# 변경이력
-
-* 2015-04-21 : v1.2 10.9(Mavericks)에서 창이 안뜨는 문제 해결
-* 2015-04-17 : v1.1 업데이트 지원
-* 2015-04-14 : v1.0 배포
