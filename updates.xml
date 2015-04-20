@@ -5,15 +5,16 @@
         <link>https://raw.githubusercontent.com/mrz1277/LoLKR/master/updates.xml</link>
         <description>Most recent changes with links to updates.</description>
         <language>kr</language>
+        
+        <item>
+            <title>Version 1.2</title>
+            <description>
+                <![CDATA[
+                    <ul><li>OS X 10.9(Mavericks)에서 창이 안뜨는 문제 해결</li></ul>
+                ]]>
+            </description>
+            <pubDate>Tue, 21 Apr 2015 05:40:11 +9000</pubDate>
+            <enclosure url="https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip" sparkle:shortVersionString="1.2" sparkle:version="4" length="1621000" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCGDCZOfj87my2Y48uI9NVLiKkihAIVAJI5BYia0uWTNndoR9R95eiHrkHW"/>
+        </item>
     </channel>
-    <item>
-        <title>Version 1.2</title>
-        <description>
-            <![CDATA[
-                <ul><li>OS X 10.9(Mavericks)에서 창이 안뜨는 문제 해결</li></ul>
-            ]]>
-        </description>
-        <pubDate>Tue, 21 Apr 2015 05:40:11 +9000</pubDate>
-        <enclosure url="https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip" sparkle:shortVersionString="1.2" sparkle:version="4" length="1621000" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCGDCZOfj87my2Y48uI9NVLiKkihAIVAJI5BYia0uWTNndoR9R95eiHrkHW"/>
-    </item>
 </rss>
