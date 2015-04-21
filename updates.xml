@@ -7,9 +7,24 @@
         <language>kr</language>
         
         <item>
+            <title>Version 1.2.1</title>
+            <description>
+                <![CDATA[
+                    <h1>업데이트 이력</h1>
+                    <h3>v1.2.1</h3>
+                    <ul><li>시작아이템 등록 폴더 존재하지 않으면 생성해서 nginx 등록</li></ul>
+                    <h3>v1.2</h3>
+                    <ul><li>OS X 10.9(Mavericks)에서 창이 안뜨는 문제 해결</li></ul>
+                ]]>
+            </description>
+            <pubDate>Tue, 21 Apr 2015 11:40:11 +9000</pubDate>
+            <enclosure url="https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip" sparkle:shortVersionString="1.2.1" sparkle:version="5" length="1617592" type="application/octet-stream" sparkle:dsaSignature="MCwCFC1c/nRrdhwnMrCDbwAAyXohOMKCAhRFKkucDBlAJN5CxZ0xQ0DZznro4A=="/>
+        </item>
+        <item>
             <title>Version 1.2</title>
             <description>
                 <![CDATA[
+                    <h3>v1.2</h3>
                     <ul><li>OS X 10.9(Mavericks)에서 창이 안뜨는 문제 해결</li></ul>
                 ]]>
             </description>
