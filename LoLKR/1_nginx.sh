@@ -76,7 +76,7 @@ http {
 " > /usr/local/etc/nginx/nginx.conf
 
 # start item
-if [ ! -d "~/Library/LaunchAgents" ]; then
+if [ ! -d ~/Library/LaunchAgents ]; then
     mkdir ~/Library/LaunchAgents
 fi
 ln -sf /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
