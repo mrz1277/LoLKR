@@ -2,6 +2,7 @@
 
 # [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 
+* 2015-05-01 : v1.2.1 5.8패치 대응
 * 2015-04-21 : v1.2 10.9(Mavericks)에서 창이 안뜨는 문제 해결
 * 2015-04-17 : v1.1 업데이트 지원
 * 2015-04-14 : v1.0 배포
@@ -40,11 +41,11 @@
 
 ## 1. [brew](http://brew.sh/) 설치
 
-먼저 `brew`(OS X 패키지 관리자)가 설치 안되어 있으신 분들은 설치해 주셔야 합니다. 그러고 나면 앱에서 `brew`를 이용해서 `nginx`(웹서버)를 자동으로 설치하게 됩니다.
+먼저 `brew`(OS X 패키지 관리자)가 설치 안되어 있으신 분들은 설치해 주셔야 합니다. 그러고 나면 앱 안에서 `brew`를 이용해서 `nginx`(웹서버)를 자동으로 설치하게 됩니다.
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다.
+터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다. 설치 중간에 `/usr/local` 폴더 생성을 위해 비밀번호를 한번 요구합니다. `sudo` 권한으로 터미널에서 직접 생성하셔도 됩니다.
 
 ## 2. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
@@ -142,6 +143,12 @@ nginx
 ### *다른 문제가 생겼어요.*
 
 [이슈](https://github.com/mrz1277/LoLKR/issues)에 올려주세요.
+
+이슈에 로그도 함께 첨부해서 올려주시면 도움이 됩니다. 로그 위치는 `/Applications/League of Legends.app/Contents/LoL/Logs` 가 하나 있고 다른 하위폴더(`RADS`)의 로그를 전부 압축하는 아래 커맨드를 터미널에서 실행하시면 됩니다.
+
+```
+find "/Applications/League of Legends.app/Contents/LoL/RADS/" -name '*.log' -print | zip logs -@
+```
 
 # 지원 OS 버전
 

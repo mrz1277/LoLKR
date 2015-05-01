@@ -65,8 +65,9 @@ http {
         listen      $2;
         server_name localhost;
 
-        rewrite      ^(.*)_KR\$        \$1_NA;
-        rewrite      ^(.*)_kr/(.*)\$   \$1_na/\$2;
+        rewrite      ^(.*)_KR\$         \$1_NA;
+        rewrite      ^(.*)_ko_kr/(.*)\$ \$1_en_us/\$2;
+        rewrite      ^(.*)_kr/(.*)\$    \$1_na/\$2;
 
         location / {
             proxy_pass  http://l3cdn.riotgames.com;

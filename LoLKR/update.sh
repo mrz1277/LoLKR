@@ -39,5 +39,5 @@ if [ "$1" = "off" ]; then
     echo "DownloadPath = /releases/Maclive
     DownloadURL = 127.0.0.1:$2
     Region = KR" > "$4/Contents/LoL/RADS/system/system.cfg"
-    echo "자동 업데이트가 정상적으로 차단되었습니다. 한국 서버가 업데이트가 될때까지 이상태로 두시면 됩니다."
+    echo "자동 업데이트가 정상적으로 차단되었습니다. 한국 서버가 업데이트가 될때까지 이 상태로 두시면 됩니다."
 fi
