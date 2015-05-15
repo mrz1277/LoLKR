@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -65,14 +65,14 @@
         </menu>
         <window title="롤 한국 서버 패치" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="370" height="320"/>
+            <rect key="contentRect" x="196" y="240" width="370" height="351"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="320"/>
+                <rect key="frame" x="0.0" y="-1" width="370" height="351"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view id="ZEK-tO-kku">
-                        <rect key="frame" x="-1" y="-1" width="371" height="322"/>
+                        <rect key="frame" x="-1" y="30" width="371" height="322"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <progressIndicator hidden="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" id="jrM-ue-qAJ">
@@ -139,7 +139,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sao-nX-qZy">
                                 <rect key="frame" x="18" y="62" width="335" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="롤 자동 업데이트" id="aNZ-Ox-nBx">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="한국 서버 업데이트" id="aNZ-Ox-nBx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -156,10 +156,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="329" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="314" height="133"/>
+                                            <size key="minSize" width="329" height="133"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="314" height="133"/>
+                                            <size key="minSize" width="329" height="133"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>
@@ -190,14 +190,34 @@
                             </textField>
                         </subviews>
                     </view>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LFd-1Q-aQo">
+                        <rect key="frame" x="83" y="20" width="90" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="북미서버: 5.9" id="fhx-DB-bXQ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="vf4-mS-IgX">
+                        <rect key="frame" x="196" y="20" width="90" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="한국서버: 5.8" id="iQV-ci-zih">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="270" y="609"/>
+            <point key="canvasLocation" x="270" y="624.5"/>
         </window>
         <viewController id="uhK-Tb-qyU" customClass="ViewController">
             <connections>
                 <outlet property="configViewController" destination="kVd-Cy-FJV" id="IKM-FN-zs4"/>
                 <outlet property="itSwitch" destination="v9u-Yd-pLw" id="wgN-2O-pAL"/>
+                <outlet property="labelKR" destination="vf4-mS-IgX" id="KvZ-Mh-Xdu"/>
+                <outlet property="labelNA" destination="LFd-1Q-aQo" id="lWW-9T-mW6"/>
                 <outlet property="nginxImageView" destination="MpV-79-5BE" id="1e5-cv-gQp"/>
                 <outlet property="patchAllButton" destination="SgW-gs-guw" id="7pn-8O-cZ9"/>
                 <outlet property="progress" destination="jrM-ue-qAJ" id="rmR-Ij-Y9w"/>

@@ -7,6 +7,24 @@
         <language>kr</language>
         
         <item>
+            <title>Version 1.2.3</title>
+            <description>
+                <![CDATA[
+                    <h1>업데이트 이력</h1>
+                    <h3>v1.2.3</h3>
+                    <ul><li>북미 및 한국 서버 버전 확인 가능</li></ul>
+                    <h3>v1.2.2</h3>
+                    <ul><li>5.8패치 대응. `패치하기`를 먼저 한번 실행한 다음 업데이트 스위치를 끄면 5.8업데이트가 정상적으로 진행됩니다.</li></ul>
+                    <h3>v1.2.1</h3>
+                    <ul><li>시작아이템 등록 폴더 존재하지 않으면 생성해서 nginx 등록</li></ul>
+                    <h3>v1.2</h3>
+                    <ul><li>OS X 10.9(Mavericks)에서 창이 안뜨는 문제 해결</li></ul>
+                ]]>
+            </description>
+            <pubDate>Fri, 15 May 2015 22:00:00 +9000</pubDate>
+            <enclosure url="https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip" sparkle:shortVersionString="1.2.3" sparkle:version="7" length="1755224" type="application/octet-stream" sparkle:dsaSignature="MCwCFEjx3ZCdLAXMsyT+rBDJMN7xcA2CAhQJ+OJtNgZKHBR9sd8ZFffRKfyacA=="/>
+        </item>
+        <item>
             <title>Version 1.2.2</title>
             <description>
                 <![CDATA[

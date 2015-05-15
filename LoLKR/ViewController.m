@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <PromiseKit.h>
 #import "ITSwitch.h"
+#import <HTMLReader/HTMLReader.h>
 
 @implementation ViewController {
     
@@ -18,6 +19,8 @@
     __weak IBOutlet NSProgressIndicator *progress;
     __unsafe_unretained IBOutlet NSTextView *textView;
     __weak IBOutlet NSViewController *configViewController;
+    __weak IBOutlet NSTextField *labelKR;
+    __weak IBOutlet NSTextField *labelNA;
 }
 
 - (void)awakeFromNib {
@@ -35,6 +38,8 @@
     [itSwitch setOn:[[[NSUserDefaults standardUserDefaults] objectForKey:@"block_update"] boolValue]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(runAllScripts:) name:@"runAllScript" object:nil];
+    
+    [self checkServerVersions];
 }
 
 - (IBAction)patchButtonPressed:(id)sender {
@@ -229,6 +234,73 @@
     NSString *output;
     output = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
     return output;
+}
+
+#pragma mark - 서버 버전 체크
+
+- (void)checkServerVersions {
+    [self parseKRServer];
+    [self parseNAServer:0];
+}
+
+- (void)parseKRServer {
+    NSError *error = nil;
+    NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d+\\.\\d+) 패치 노트" options:0 error:&error];
+    
+    NSURL *URL = [NSURL URLWithString:@"http://www.leagueoflegends.co.kr/?m=news&cate=update"];
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:URL completionHandler:
+      ^(NSData *data, NSURLResponse *response, NSError *error) {
+          NSString *contentType = nil;
+          if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+              NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
+              contentType = headers[@"Content-Type"];
+          }
+          HTMLDocument *document = [HTMLDocument documentWithData:data
+                                                contentTypeHeader:contentType];
+          NSArray *rows = [document nodesMatchingSelector:@".tleft"];
+          NSString *currentVersion = nil;
+          for (HTMLElement *row in rows) {
+              NSTextCheckingResult *match = [regex firstMatchInString:row.textContent options:0 range:NSMakeRange(0, row.textContent.length)];
+              if (match.range.length != 0) {
+                  currentVersion = [row.textContent substringWithRange:[match rangeAtIndex:1]];
+                  [labelKR setStringValue:[NSString stringWithFormat:@"한국서버: %@", currentVersion]];
+                  break;
+              }
+          }
+      }] resume];
+}
+
+- (void)parseNAServer:(int)page {
+    NSError *error = nil;
+    NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:@"Patch (\\d+\\.\\d+) [Nn]otes?" options:0 error:&error];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://na.leagueoflegends.com/en/news?page=%d", page]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:URL completionHandler:
+      ^(NSData *data, NSURLResponse *response, NSError *error) {
+          NSString *contentType = nil;
+          if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+              NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
+              contentType = headers[@"Content-Type"];
+          }
+          HTMLDocument *document = [HTMLDocument documentWithData:data
+                                                contentTypeHeader:contentType];
+          NSArray *rows = [document nodesMatchingSelector:@".default-2-3 h4 a"];
+          NSString *currentVersion = nil;
+          for (HTMLElement *row in rows) {
+              NSTextCheckingResult *match = [regex firstMatchInString:row.textContent options:0 range:NSMakeRange(0, row.textContent.length)];
+              if (match.range.length != 0) {
+                  currentVersion = [row.textContent substringWithRange:[match rangeAtIndex:1]];
+                  [labelNA setStringValue:[NSString stringWithFormat:@"북미서버: %@", currentVersion]];
+                  break;
+              }
+          }
+          if (currentVersion == nil) {
+              [self parseNAServer:page+1];
+          }
+          
+      }] resume];
 }
 
 @end
