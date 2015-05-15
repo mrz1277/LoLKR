@@ -111,6 +111,11 @@ http {
 ![스위치](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/switch.png)
 
 평소 자동 업데이트 방지에 스위치를 켜두고 있다가, 한국 서버가 정상적으로 업데이트 되면 그때 스위치를 잠시 끄고 롤을 실행하면 클라이언트가 정상적으로 업데이트됩니다. 업데이트가 완료되면 다시 스위치를 켜고 자동 업데이트 방지에 두고 플레이 하시면 됩니다.
+북미서버와 한국서버간의 버전차이가 있을때도 업데이트 방지에 스위치가 켜저있으면 버전이 서로 다른 각각의 서버에 정상적으로 접속됩니다. 아래는 2015년 5월 15일 23시에 북미(5.9)와 한국(5.8)서버를 번갈아가면서 접속하고 찍은 사진입니다. 왼쪽 상단에 버전명이 있습니다.
+
+![한국서버 5.8](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/kr-5_8.png)
+
+![북미서버 5.9](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/na-5_9.png)
 
 # 추가 기능
 
