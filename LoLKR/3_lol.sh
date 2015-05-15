@@ -6,7 +6,7 @@
 #  Created by Jason Koo on 4/9/15.
 #  Copyright (c) 2015 Jaesung Koo. All rights reserved.
 #
-#  $> ./3_lol.sh "/Application/League of Legends.app" 8010
+#  $> ./3_lol.sh "/Applications/League of Legends.app" 8010
 
 # arguments
 if [ "$#" -ne 2 ]; then
