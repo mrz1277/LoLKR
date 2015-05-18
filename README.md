@@ -172,4 +172,6 @@ OS X 10.9(Mavericks) 이상
 
 [LoL Stats](http://mrz1277.github.io/LoLStats/) 
 
+![lolstats](http://mrz1277.github.io/LoLStats/shot-3.png)
+
 맥 네이티브 환경에서 동작하는 롤 인게임 정보 확인 앱입니다. 게임이 시작되면 롤 전적 사이트에서 인게임 정보 확인하는 번거로움을 줄이기 위해 제작되었습니다.
