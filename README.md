@@ -66,12 +66,14 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 '패치 하기' 버튼을 눌러주세요.
 
-## 3. 패치 시작 
+## 3. 패치 준비
 ![설정화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-2.png) 
 
 대부분은 그냥 확인 버튼을 누르시면 됩니다.
 
-* 기본 롤 경로(`/Applications/League of Legends`)가 아니신 분들은 별도로 설정해주세요.
+### 옵션 설명
+
+* 기본 롤 경로(`/Applications/League of Legends`)가 아니신 분들은 별도로 설정해주세요. 롤 경로가 다르면 롤 아이콘 모양이 아니라 흰색 파일 아이콘 모양입니다.
 * `brew`를 이용해서 로컬에 `nginx`를 설치합니다. 이미 설치가 되신 분들은 포트만 겹치지 않게 `/usr/local/etc/nginx/nginx.conf` 파일만 아래와 같이 따로 설정해주시면 됩니다. 단, `brew`로 설치한 `nginx`만 해당합니다. 다른 방법으로 설치한 `nginx`는 경로를 제대로 잡지 못하니 주의하세요.
 ```
 worker_processes    1;
@@ -118,7 +120,9 @@ http {
 
 패치가 완료되면 롤을 다시 시작해주세요.
 
-![완료 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-3.png)
+![완료 화면](https://raw.githubusercontent.com/mrz1278/LoLKR/master/screenshots/app-3.png)
+
+패치는 최초 한번만 하시면 됩니다. 여기서 주의하실 점은 롤 업데이트 기간동안 패치하기를 하면 안되는 것입니다. 패치하기를 진행하면 최신 버전의 업데이트 파일들을 내려받아서 롤을 실행하게 되면 북미기준으로 업데이트가 진행됩니다. 업데이트 기간동안엔 아래의 스위치 조작을 하시면 됩니다.
 
 ## 4. 업데이트 스위치
 ![스위치](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/switch.png)
