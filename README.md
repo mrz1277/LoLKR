@@ -57,7 +57,9 @@
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다. 설치 중간에 `/usr/local` 폴더 생성을 위해 맥북 관리자 비밀번호를 한번 요구합니다. 비밀번호 입력할 때 `password:` 다음 커서가 멈춰있는것처럼 보이는데 실제로는 비밀번호를 받고 있는 상태이니 그냥 비밀번호를 치고 엔터키를 누르시면 됩니다. 이 부분은 `sudo` 권한으로 터미널에서 직접 폴더를 생성하셔도 되는 부분입니다.
+터미널에 위 명령어를 복사하시고 붙여넣기해서 실행해 주시면 설치가 진행됩니다. 설치 중간에 `/usr/local` 폴더 생성을 위해 맥북 관리자 비밀번호를 한번 요구합니다. 비밀번호 입력할 때 `password:` 다음 커서가 멈춰있는것처럼 보이는데 실제로는 비밀번호를 받고 있는 상태이니 그냥 비밀번호를 치고 엔터키를 누르시면 됩니다. 
+
+이 부분은 `sudo` 권한으로 터미널에서 직접 폴더를 생성하셔도 되는 부분입니다.
 
 ## 2. 앱 [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 ![앱 구동 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-1.png)
