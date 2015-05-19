@@ -120,7 +120,7 @@ http {
 
 패치가 완료되면 롤을 다시 시작해주세요.
 
-![완료 화면](https://raw.githubusercontent.com/mrz1278/LoLKR/master/screenshots/app-3.png)
+![완료 화면](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/app-3.png)
 
 패치는 최초 한번만 하시면 됩니다. 여기서 주의하실 점은 롤 업데이트 기간동안 패치하기를 하면 안되는 것입니다. 패치하기를 진행하면 최신 버전의 업데이트 파일들을 내려받아서 롤을 실행하게 되면 북미기준으로 업데이트가 진행됩니다. 업데이트 기간동안엔 아래의 스위치 조작을 하시면 됩니다.
 
