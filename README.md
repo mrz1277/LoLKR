@@ -160,7 +160,7 @@ http {
 
 ![nginx](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/nginx.png)
 
-'패치하기' 버튼을 눌러서 `nginx`을 실행할 수도 있고 터미널에서 아래 커맨드를 입력해서 별도로 실행할 수 도 있습나다.
+터미널에서 아래 커맨드를 입력해서 실행시켜주세요. **`패치하기`버튼을 누르면 nginx는 재시작 되지만 업데이트 기간엔 절대 누르시면 안됩니다.**
 
 ```
 nginx
