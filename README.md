@@ -8,6 +8,10 @@
 * 2015-04-17 : (v1.1) 자체 업데이트 지원
 * 2015-04-14 : (v1.0) 배포
 
+# 공지
+
+* [5.9 패치 이후 한글 음성이 안들리는 문제](https://github.com/mrz1277/LoLKR/issues/18) - lhj6784님께서 올려주신 이슈입니다. 해당 문제를 겪고 계신 소환사분들이 계시다면 링크로 가서 해결하시길 바랍니다.
+
 # 문제
 
 * [한국서버 Mac OS X 지원 관련 질문 - 리그 오브 레전드 공식 홈페이지에서 조회수 약 36,000, 댓글 156, 추천 237건을 받은 글](http://www.leagueoflegends.co.kr/?m=forum&mod=view&mod_context=topic&topic_id=7&thread_id=270482)
@@ -177,9 +181,13 @@ nginx -s reload
 brew doctor
 ```
 
+### *업데이트 기간중에 패치가 되어버렸습니다. 다시 되돌릴 수 없나요?*
+
+로컬에 웹서버를 둔 이상 로컬 메타파일이 업데이트 되면 다시 되돌리긴 어렵습니다. 그게 온라인상에 업데이트 서버가 있어야 하는 이유입니다. 하지만 실수로 업데이트가 될 수도 있기 때문에 평소에 로컬에 업데이트 메타파일(`/usr/local/var/www`)과 인게임 클라이언트 폴더를(`/Applications/League of Legends.app/Contents/LoL/RADS/projects/lol_game_client_ko_kr/`) 백업해두면 도움이 됩니다. 물론 본 패치앱이 해당 작업을 진행해주면 더 좋겠죠. 이건 시간날 때 구현하도록 아래 [TODO](#TODO)에 남겨두도록 하겠습니다.
+
 ### *다른 문제가 생겼어요.*
 
-[이슈](https://github.com/mrz1277/LoLKR/issues)에 올려주세요.
+[이슈](https://github.com/mrz1277/LoLKR/issues)에 올려주세요. `closed` 탭에 들어가면 기존에 질문했던 내역들도 볼 수 있으니 올리기 전에 미리 검색해 보시면 도움이 됩니다.
 
 이슈에 로그도 함께 첨부해서 올려주시면 도움이 됩니다. 로그 위치는 `/Applications/League of Legends.app/Contents/LoL/Logs` 가 하나 있고 다른 하위폴더(`RADS`)의 로그를 전부 압축하는 아래 커맨드를 터미널에서 실행하시면 됩니다.
 
@@ -190,6 +198,13 @@ find "/Applications/League of Legends.app/Contents/LoL/RADS/" -name '*.log' -pri
 # 지원 OS 버전
 
 OS X 10.9(Mavericks) 이상
+
+# TODO
+
+- [ ] 업데이트 기간중에 패치가 되었을때 다시 되돌리기(로컬 자동 백업/리커버리)
+- [ ] 한글 채팅 자소 분리 문제
+
+오픈소스인만큼 다른 능력있는 개발자분들의 pull request 환영합니다.
 
 # 자매품
 
