@@ -2,12 +2,14 @@
 
 # [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 
-* 2015-07-22 : (v1.3) 부팅때 nginx가 켜지지 않는 문제, 패치 때마다 한국어 음성이 나오지 않는 문제 해결 등
+[![Join the chat at https://gitter.im/mrz1277/LoLKR](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mrz1277/LoLKR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+* 2015-07-22 : (v1.3.0) 부팅때 nginx가 켜지지 않는 문제, 패치 때마다 한국어 음성이 나오지 않는 문제 해결 등
 * 2015-05-15 : (v1.2.3) 북미 및 한국 서버 버전 확인
 * 2015-05-01 : (v1.2.2) 5.8패치 대응. `패치하기`를 먼저 한번 실행한 다음 업데이트 스위치를 끄면 5.8업데이트가 정상적으로 진행됩니다.
-* 2015-04-21 : (v1.2) 10.9(Mavericks)에서 창이 안뜨는 문제 해결
-* 2015-04-17 : (v1.1) 자체 업데이트 지원
-* 2015-04-14 : (v1.0) 배포
+* 2015-04-21 : (v1.2.0) 10.9(Mavericks)에서 창이 안뜨는 문제 해결
+* 2015-04-17 : (v1.1.0) 자체 업데이트 지원
+* 2015-04-14 : (v1.0.0) 배포
 
 # 공지사항
 
