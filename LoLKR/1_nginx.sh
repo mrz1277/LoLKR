@@ -57,6 +57,8 @@ http {
 
         location @cdn {
             proxy_pass  http://l3cdn.riotgames.com;
+            proxy_connect_timeout 60s;
+            proxy_read_timeout 60s;
         }
     }
 
@@ -65,12 +67,14 @@ http {
         listen      $2;
         server_name localhost;
 
-        rewrite      ^(.*)_KR\$         \$1_NA;
-        rewrite      ^(.*)_ko_kr/(.*)\$ \$1_en_us/\$2;
-        rewrite      ^(.*)_kr/(.*)\$    \$1_na/\$2;
+        rewrite      ^(.*)_KR\$                                             \$1_NA;
+        rewrite      ^(.*)_ko_kr/(((?!files|releasemanifest).)*)\$          \$1_en_us/\$2;
+        rewrite      ^(.*)_kr/(((?!files|releasemanifest).)*)\$             \$1_na/\$2;
 
         location / {
             proxy_pass  http://l3cdn.riotgames.com;
+            proxy_connect_timeout 60s;
+            proxy_read_timeout 60s;
         }
     }
 }

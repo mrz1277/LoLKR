@@ -2,6 +2,7 @@
 
 # [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
 
+* 2015-07-22 : (v1.3) 부팅때 nginx가 켜지지 않는 문제, 패치 때마다 한국어 음성이 나오지 않는 문제 해결 등
 * 2015-05-15 : (v1.2.3) 북미 및 한국 서버 버전 확인
 * 2015-05-01 : (v1.2.2) 5.8패치 대응. `패치하기`를 먼저 한번 실행한 다음 업데이트 스위치를 끄면 5.8업데이트가 정상적으로 진행됩니다.
 * 2015-04-21 : (v1.2) 10.9(Mavericks)에서 창이 안뜨는 문제 해결
@@ -104,6 +105,8 @@ http {
 
         location @cdn {
             proxy_pass  http://l3cdn.riotgames.com;
+            proxy_connect_timeout 60s;
+            proxy_read_timeout 60s;
         }
     }
 
@@ -112,12 +115,14 @@ http {
         listen      8020;
         server_name localhost;
 
-        rewrite      ^(.*)_KR$         $1_NA;
-        rewrite      ^(.*)_ko_kr/(.*)$ $1_en_us/$2;
-        rewrite      ^(.*)_kr/(.*)$    $1_na/$2;
+        rewrite      ^(.*)_KR$                                             $1_NA;
+        rewrite      ^(.*)_ko_kr/(((?!files|releasemanifest).)*)$          $1_en_us/$2;
+        rewrite      ^(.*)_kr/(((?!files|releasemanifest).)*)$             $1_na/$2;
 
         location / {
             proxy_pass  http://l3cdn.riotgames.com;
+            proxy_connect_timeout 60s;
+            proxy_read_timeout 60s;
         }
     }
 }
@@ -189,6 +194,10 @@ brew doctor
 하지만 실수로 업데이트가 될 수도 있기 때문에 평소에 로컬에 업데이트 메타파일(`/usr/local/var/www`)과 인게임 클라이언트 폴더를(`/Applications/League of Legends.app/Contents/LoL/RADS/projects/lol_game_client_ko_kr/`) 백업해두면 도움이 됩니다. 
 
 물론 본 패치앱이 해당 작업을 진행해주면 더 좋겠죠. 이건 시간날 때 구현하도록 아래 [TODO](#todo)에 남겨두도록 하겠습니다.
+
+### 재부팅하면 nginx 가 자동으로 실행이 안됩니다.
+
+
 
 ### *다른 문제가 생겼어요.*
 

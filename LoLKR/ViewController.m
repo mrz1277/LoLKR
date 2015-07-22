@@ -40,6 +40,31 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(runAllScripts:) name:@"runAllScript" object:nil];
     
     [self checkServerVersions];
+    
+    // 1.3.0
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults boolForKey:@"1.3.0"]) {
+        [self disableControls];
+        dispatch_promise(^{
+            return [self runScript:@"1_nginx" arguments:@[[[NSUserDefaults standardUserDefaults] objectForKey:@"port1"],
+                                                          [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"]]];
+        }).thenInBackground(^(NSNumber *status) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                textView.string = [textView.string stringByAppendingString:@"\nLoLKR 1.3.0 업데이트 완료\n\n"];
+                [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+            });
+            
+            return 0;
+        }).finally(^{
+            [self enableControls];
+            [userDefaults setObject:@YES forKey:@"1.3.0"];
+        });
+    }
+}
+
+- (BOOL)isSameVersion {
+    return [[[labelKR.stringValue componentsSeparatedByString:@" "] objectAtIndex:1] isEqualToString:
+            [[labelNA.stringValue componentsSeparatedByString:@" "] objectAtIndex:1]];
 }
 
 - (IBAction)patchButtonPressed:(id)sender {
@@ -47,50 +72,67 @@
     [window setContentView:configViewController.view];
     [window setFrame:NSMakeRect(0, 0, 480, 340) display:YES];
     
-    [self.view.window beginSheet:window completionHandler:nil];
+    // 서버 버전이 다르면 경고 메세지
+    if (![self isSameVersion]) {
+        NSAlert *alert = [NSAlert new];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert setMessageText:@"북미와 버전이 다릅니다."];
+        [alert setInformativeText:@"업데이트 기간에 패치를 하면 자동으로 북미버전으로 업데이트가 됩니다. 그래도 계속하시겠습니까? 패치하기는 최초에 한번만 하면 됩니다."];
+        [alert addButtonWithTitle:@"패치하기"];
+        [alert addButtonWithTitle:@"취소"];
+        [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+            if (returnCode == NSAlertFirstButtonReturn) {
+                [self.view.window beginSheet:window completionHandler:nil];
+            }
+        }];
+    } else {
+        [self.view.window beginSheet:window completionHandler:nil];
+    }
 }
 
 - (IBAction)switchValueChanged:(id)sender {
     ITSwitch *switchControl = (ITSwitch *)sender;
     if (!switchControl.isOn) {
-        NSAlert *alert = [NSAlert new];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        [alert setMessageText:@"주의"];
-        [alert setInformativeText:@"자동 업데이트를 허용하면 한국 서버 클라이언트가 업데이트 됩니다. 북미 서버 기준으로 한국 서버와 버전이 다르면 업데이트가 진행되어 한국 서버에 접속이 안될 수 있습니다. 한국서버 버전이 미국 서버와 같아지면 업데이트를 진행하세요."];
-        [alert addButtonWithTitle:@"자동 업데이트 허용"];
-        [alert addButtonWithTitle:@"취소"];
-        [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
-            if (returnCode == NSAlertSecondButtonReturn) {
-                [switchControl setOn:YES];
-            } else {
-                NSString *scriptPath = [[NSBundle mainBundle] pathForResource:@"2_download_versions" ofType:@"sh"];
-                scriptPath = [NSString stringWithFormat:@"\"%@\"", scriptPath];
-                
-                dispatch_queue_t taskQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-                dispatch_async(taskQueue, ^{
-                    progress.hidden = NO;
-                    itSwitch.enabled = NO;
-                    [progress startAnimation:nil];
+        if (![self isSameVersion]) {
+            NSAlert *alert = [NSAlert new];
+            [alert setAlertStyle:NSWarningAlertStyle];
+            [alert setMessageText:@"주의"];
+            [alert setInformativeText:@"자동 업데이트를 허용하면 한국 서버 클라이언트가 업데이트 됩니다. 북미 서버 기준으로 한국 서버와 버전이 다르면 업데이트가 진행되어 한국 서버에 접속이 안될 수 있습니다. 한국서버 버전이 미국 서버와 같아지면 업데이트를 진행하세요."];
+            [alert addButtonWithTitle:@"자동 업데이트 허용"];
+            [alert addButtonWithTitle:@"취소"];
+            [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+                if (returnCode == NSAlertSecondButtonReturn) {
+                    [switchControl setOn:YES];
+                } else {
+                    NSString *scriptPath = [[NSBundle mainBundle] pathForResource:@"2_download_versions" ofType:@"sh"];
+                    scriptPath = [NSString stringWithFormat:@"\"%@\"", scriptPath];
                     
-                    NSNumber *status = [self runScript:@"update" arguments:@[@"on",
-                                                                             [[NSUserDefaults standardUserDefaults] objectForKey:@"port1"],
-                                                                             [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"],
-                                                                             [[NSUserDefaults standardUserDefaults] objectForKey:@"lol_path"],
-                                                                             scriptPath
-                                                                             ]];
-                    if ([status intValue] == 0) {
-                        [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:@"block_update"];
-                        dispatch_sync(dispatch_get_main_queue(), ^{
-                            textView.string = [textView.string stringByAppendingString:@"\n\n"];
-                            [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
-                        });
-                    }
-                    
-                    [progress stopAnimation:nil];
-                    itSwitch.enabled = YES;
-                });
-            }
-        }];
+                    dispatch_queue_t taskQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+                    dispatch_async(taskQueue, ^{
+                        progress.hidden = NO;
+                        itSwitch.enabled = NO;
+                        [progress startAnimation:nil];
+                        
+                        NSNumber *status = [self runScript:@"update" arguments:@[@"on",
+                                                                                 [[NSUserDefaults standardUserDefaults] objectForKey:@"port1"],
+                                                                                 [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"],
+                                                                                 [[NSUserDefaults standardUserDefaults] objectForKey:@"lol_path"],
+                                                                                 scriptPath
+                                                                                 ]];
+                        if ([status intValue] == 0) {
+                            [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:@"block_update"];
+                            dispatch_sync(dispatch_get_main_queue(), ^{
+                                textView.string = [textView.string stringByAppendingString:@"\n\n"];
+                                [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+                            });
+                        }
+                        
+                        [progress stopAnimation:nil];
+                        itSwitch.enabled = YES;
+                    });
+                }
+            }];
+        }
     } else {
         dispatch_queue_t taskQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
         dispatch_async(taskQueue, ^{
@@ -117,10 +159,7 @@
 }
 
 - (void)runAllScripts:(NSNotification *)noti {
-    itSwitch.enabled = NO;
-    patchAllButton.enabled = NO;
-    progress.hidden = NO;
-    [progress startAnimation:nil];
+    [self disableControls];
     
     __block BOOL success = YES;
     
@@ -165,15 +204,26 @@
             success = NO;
         }
     }).finally(^{
-        [progress stopAnimation:nil];
-        patchAllButton.enabled = YES;
-        itSwitch.enabled = YES;
+        [self enableControls];
         
         if (success) {
             textView.string = [textView.string stringByAppendingString:@"한글 패치가 모두 완료되었습니다. 롤을 다시 실행해 주세요.\n\n"];
             [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
         }
     });
+}
+
+- (void)disableControls {
+    itSwitch.enabled = NO;
+    patchAllButton.enabled = NO;
+    progress.hidden = NO;
+    [progress startAnimation:nil];
+}
+
+- (void)enableControls {
+    [progress stopAnimation:nil];
+    patchAllButton.enabled = YES;
+    itSwitch.enabled = YES;
 }
 
 - (NSNumber *)runScript:(NSString *)scriptName arguments:(NSArray *)arguments {
