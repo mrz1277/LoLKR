@@ -35,7 +35,7 @@
         nginxImageView.image = [NSImage imageNamed:NSImageNameStatusNone];
         itSwitch.enabled = NO;
     }
-    [itSwitch setOn:[[[NSUserDefaults standardUserDefaults] objectForKey:@"block_update"] boolValue]];
+    [itSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"block_update"]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(runAllScripts:) name:@"runAllScript" object:nil];
     
@@ -132,6 +132,33 @@
                     });
                 }
             }];
+        } else {
+            NSString *scriptPath = [[NSBundle mainBundle] pathForResource:@"2_download_versions" ofType:@"sh"];
+            scriptPath = [NSString stringWithFormat:@"\"%@\"", scriptPath];
+            
+            dispatch_queue_t taskQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+            dispatch_async(taskQueue, ^{
+                progress.hidden = NO;
+                itSwitch.enabled = NO;
+                [progress startAnimation:nil];
+                
+                NSNumber *status = [self runScript:@"update" arguments:@[@"on",
+                                                                         [[NSUserDefaults standardUserDefaults] objectForKey:@"port1"],
+                                                                         [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"],
+                                                                         [[NSUserDefaults standardUserDefaults] objectForKey:@"lol_path"],
+                                                                         scriptPath
+                                                                         ]];
+                if ([status intValue] == 0) {
+                    [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:@"block_update"];
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        textView.string = [textView.string stringByAppendingString:@"\n\n"];
+                        [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+                    });
+                }
+                
+                [progress stopAnimation:nil];
+                itSwitch.enabled = YES;
+            });
         }
     } else {
         dispatch_queue_t taskQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
@@ -145,7 +172,7 @@
                                                                      [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"],
                                                                      [[NSUserDefaults standardUserDefaults] objectForKey:@"lol_path"]]];
             if ([status intValue] == 0) {
-                [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"block_update"];
+                [[NSUserDefaults standardUserDefaults] setObject:@YES forKey:@"block_update"];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     textView.string = [textView.string stringByAppendingString:@"\n\n"];
                     [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
