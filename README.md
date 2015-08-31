@@ -4,6 +4,7 @@
 
 [![Join the chat at https://gitter.im/mrz1277/LoLKR](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mrz1277/LoLKR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+* 2015-09-01 : (v1.3.3) 로비 화면 UI 업데이트 [@billieyang](https://github.com/billieyang)님 제공
 * 2015-07-22 : (v1.3.0) 부팅때 nginx가 켜지지 않는 문제, 패치 때마다 한국어 음성이 나오지 않는 문제 해결
 * 2015-05-15 : (v1.2.3) 북미 및 한국 서버 버전 확인
 * 2015-05-01 : (v1.2.2) 5.8패치 대응. `패치하기`를 먼저 한번 실행한 다음 업데이트 스위치를 끄면 5.8업데이트가 정상적으로 진행됩니다.
@@ -163,6 +164,8 @@ http {
 ![로비](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/lobby.png)
 
 # 자주 묻는 질문
+
+[이곳](https://github.com/mrz1277/LoLKR/issues?q=is%3Aissue+is%3Aclosed)에서 기존에 다른 유저들이 올린 문제에 대한 부분을 먼저 검색해주세요.
 
 ### *명시되지 않은 오류가 발생했다며 롤이 실행되지 않습니다.*
 

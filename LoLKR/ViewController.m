@@ -46,8 +46,8 @@
     if (![userDefaults boolForKey:@"1.3.0"]) {
         [self disableControls];
         dispatch_promise(^{
-            return [self runScript:@"1_nginx" arguments:@[[[NSUserDefaults standardUserDefaults] objectForKey:@"port1"],
-                                                          [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"]]];
+            return [self runScript:@"1_nginx" arguments:@[[userDefaults objectForKey:@"port1"],
+                                                          [userDefaults objectForKey:@"port2"]]];
         }).thenInBackground(^(NSNumber *status) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 textView.string = [textView.string stringByAppendingString:@"\nLoLKR 1.3.0 업데이트 완료\n\n"];
@@ -58,6 +58,27 @@
         }).finally(^{
             [self enableControls];
             [userDefaults setObject:@YES forKey:@"1.3.0"];
+        });
+    }
+    
+    
+    // 1.3.3
+    if (![userDefaults boolForKey:@"1.3.3"] && [userDefaults objectForKey:@"lol_path"]) {
+        NSString *currentPort = itSwitch.isOn ? [userDefaults objectForKey:@"port1"] : [userDefaults objectForKey:@"port2"];
+        
+        dispatch_promise(^{
+            return [self runScript:@"3_lol" arguments:@[[userDefaults objectForKey:@"lol_path"],
+                                                        currentPort]];
+        }).thenInBackground(^(NSNumber *status) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                textView.string = [textView.string stringByAppendingString:@"\nLoLKR 1.3.3 업데이트 완료\n\n"];
+                [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
+            });
+            
+            return 0;
+        }).finally(^{
+            [self enableControls];
+            [userDefaults setObject:@YES forKey:@"1.3.3"];
         });
     }
 }
@@ -216,8 +237,11 @@
                 [textView scrollRangeToVisible:NSMakeRange([textView.string length], 0)];
             });
             
+            NSString *currentPort = itSwitch.isOn ? [[NSUserDefaults standardUserDefaults] objectForKey:@"port1"]
+            : [[NSUserDefaults standardUserDefaults] objectForKey:@"port2"];
+            
             NSNumber *status3 = [self runScript:@"3_lol" arguments:@[[[NSUserDefaults standardUserDefaults] objectForKey:@"lol_path"],
-                                                                     [[NSUserDefaults standardUserDefaults] objectForKey:@"port1"]]];
+                                                                     currentPort]];
             
             if ([status3 intValue] == 0) {
                 dispatch_sync(dispatch_get_main_queue(), ^{
