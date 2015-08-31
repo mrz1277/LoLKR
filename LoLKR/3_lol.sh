@@ -79,20 +79,18 @@ if [ ! -d "$BASE_DIR/projects/lol_air_client_config_kr" ]; then
     cp -r "$BASE_DIR/projects/lol_air_client_config_na" "$BASE_DIR/projects/lol_air_client_config_kr"
 fi
 
-find "$BASE_DIR/projects/lol_air_client_config_kr" -name "lol.properties" | while read filename; do echo "host=prod.kr.lol.riotgames.com
+find "$BASE_DIR/projects/lol_air_client_config_kr" -name "lol.properties" | while read filename; do echo "host=prod.kr.lol.riotgames.com,prod.kr.lol.riotgames.com
 xmpp_server_url=chat.kr.lol.riotgames.com
-ladderURL=http://www.leagueoflegends.co.kr
-storyPageURL=http://leagueoflegends.co.kr/launcher/journal.php
 lq_uri=https://lq.kr.lol.riotgames.com
-ekg_uri=https://ekg.riotgames.com
-regionTag=kr
 rssStatusURLs=null
-lobbyLandingURL=http://landing.leagueoflegends.co.kr
-loadModuleChampionDetail=true
+regionTag=kr
+lobbyLandingURL=http://frontpage.kr.leagueoflegends.com/ko_KR/client/landing
 featuredGamesURL=http://spectator.kr.lol.riotgames.com:80/observer-mode/rest/featured
-riotDataServiceDataSendProbability=1.0
-platformId=kr
-useOldChatRenderers=true" > "$filename"; done
+storyPageURL=http://www.leagueoflegends.co.kr/launcher/journal.php
+ladderURL=http://www.leagueoflegends.co.kr
+platformId=KR
+ekg_uri=https://ekg.riotgames.com
+riotDataServiceDataSendProbability=1.0" > "$filename"; done
 
 echo "airConfigProject = lol_air_client_config_kr" > "$BASE_DIR/system/launcher.cfg"
 echo "locale = ko_KR" > "$BASE_DIR/system/locale.cfg"
