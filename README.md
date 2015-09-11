@@ -228,6 +228,10 @@ brew uninstall nginx
 
 OS X 10.9(Mavericks) 이상
 
+# 한글채팅 입력 플러그인
+
+이선엽 개발자님이 한글채팅 입력 플러그인 [LoLChatFix](http://lolchatfix.funso.me/) 을 제작해 주셨습니다.
+
 # TODO
 
 - [ ] 업데이트 기간중에 패치가 되었을때 다시 되돌리기(로컬 자동 백업/리커버리)
