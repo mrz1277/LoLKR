@@ -217,12 +217,12 @@ find "/Applications/League of Legends.app/Contents/LoL/RADS/" -name '*.log' -pri
 이전으로 복원하는 가장 깔끔한 방법은 롤을 재설치 하는겁니다.
 
 1. 기존에 설치된 롤을 `/Application` 폴더에서 삭제합니다.
-2. [북미 공식 홈](http://na.leagueoflegends.com/)에서 롤을 다운받아 설치합니다.
-3. 터미널에 아래 커맨드를 입력해 `nginx`를 삭제합니다.
-
-```
-brew uninstall nginx
-```
+2. 터미널에 아래 커맨드를 입력해 `nginx`를 삭제합니다.
+  ```
+  brew uninstall nginx
+  ```
+  
+3. [북미 공식 홈](http://na.leagueoflegends.com/)에서 롤을 다운받아 설치합니다.
 
 # 지원 OS 버전
 
