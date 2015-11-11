@@ -1,3 +1,33 @@
+# 임시 공지
+
+최근들어 업데이트가 북미보다 한국이 더 빨라졌습니다. 오전에 한국이 먼저 업데이트되고 오후 8시쯤 이후에 북미가 업데이트 되는식입니다. 즉 기존의 북미가 한국보다 업데이트가 빠르다는 가정하에 제작된 본 패치는 대략 10시간 정도의 갭이 생기게 된 겁니다. 이 사이에 접속하기 위해서는 업데이트 서버를 북미가 아니라 오세아니아로 우회하는 작업을 아래의 순서대로 해주셔야 합니다.
+
+1. 롤 시작화면에서 우측 상단 서버명을 누르고 지역 위치를 오세아니아 서버로 바꿉니다. 그러면 오세아니아 서버 업데이트가 진행됩니다.
+2. 롤을 종료하고 `/Applications/League of Legends.app/Contents/LoL/RADS/projects/lol_air_client_config_kr` 폴더를 지웁니다. (파인더를 열고 ⌘+shift+G 를 누르고 위 경로를 복사해서 이동한 뒤 ⌘+↑ 를 눌러 상위 폴더로 이동하시면 됩니다.)
+3. `/Applications/LoLKR.app/Contents/Resources` 폴더로 이동합니다.
+4. `1_nginx.sh` 파일을 열고 아래 3 부분을 찾아 화살표 오른쪽 부분으로 수정합니다.
+
+```
+$1_NA; ==> $1_OC1;
+$1_en_us/$2; ==> $1_en_au/$2;
+$1_na/$2; ==> $1_oc1/$2;
+```
+5. `2_download_versions.sh` 파일을 열고 아래 부분들을 모두 수정합니다.
+
+```
+releaselisting_NA ==> releaselisting_OC1
+lol_air_client_config_na ==> lol_air_client_config_oc1
+```
+6.  `3_lol.sh` 파일을 열고 아래 부분을 수정합니다.
+
+```
+cp -r "$BASE_DIR/projects/lol_air_client_config_na" "$BASE_DIR/projects/lol_air_client_config_kr"
+==>
+cp -r "$BASE_DIR/projects/lol_air_client_config_oc1" "$BASE_DIR/projects/lol_air_client_config_kr"
+```
+7. `LoLKR` 앱을 열고 패치하기를 하고 스위치를 허용에 둡니다.
+8. 대한민국 서버로 패치를하고 로그인 화면에 들어갔을때 업데이트 된 배경화면이 나오면 성공입니다.
+
 ![icon](https://raw.githubusercontent.com/mrz1277/LoLKR/master/screenshots/icon.png)
 
 # [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
