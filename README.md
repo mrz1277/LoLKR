@@ -5,20 +5,20 @@
 1. 롤 시작화면에서 우측 상단 서버명을 누르고 지역 위치를 오세아니아 서버로 바꿉니다. 그러면 오세아니아 서버 업데이트가 진행됩니다.
 2. 롤을 종료하고 `/Applications/League of Legends.app/Contents/LoL/RADS/projects/lol_air_client_config_kr` 폴더를 지웁니다. (파인더를 열고 ⌘+shift+G 를 누르고 위 경로를 복사해서 이동한 뒤 ⌘+↑ 를 눌러 상위 폴더로 이동하시면 됩니다.)
 3. `/Applications/LoLKR.app/Contents/Resources` 폴더로 이동합니다.
-4. `1_nginx.sh` 파일을 열고 아래 3 부분을 찾아 화살표 오른쪽 부분으로 수정합니다.
+4. `1_nginx.sh` 파일을 열고 아래 3 부분을 찾아 화살표 오른쪽 부분으로 수정합니다. [파일](https://github.com/mrz1277/LoLKR/wiki/1_nginx.sh-for-OC1)
   ```
-$1_NA; ==> $1_OC1;
-$1_en_us/$2; ==> $1_en_au/$2;
-$1_na/$2; ==> $1_oc1/$2;
+\$1_NA; ==> \$1_OC1;
+\$1_en_us/\$2; ==> \$1_en_au/\$2;
+\$1_na/\$2; ==> \$1_oc1/\$2;
   ```
 
-5. `2_download_versions.sh` 파일을 열고 아래 부분들을 모두 수정합니다.
+5. `2_download_versions.sh` 파일을 열고 아래 부분들을 모두 수정합니다. [파일](https://github.com/mrz1277/LoLKR/wiki/2_download_versions.sh-for-OC1)
   ```
 releaselisting_NA ==> releaselisting_OC1
 lol_air_client_config_na ==> lol_air_client_config_oc1
   ```
 
-6.  `3_lol.sh` 파일을 열고 아래 부분을 수정합니다.
+6.  `3_lol.sh` 파일을 열고 아래 부분을 수정합니다. [파일](https://github.com/mrz1277/LoLKR/wiki/3_lol.sh-for-OC1)
   ```
 cp -r "$BASE_DIR/projects/lol_air_client_config_na" "$BASE_DIR/projects/lol_air_client_config_kr"
 ==>
