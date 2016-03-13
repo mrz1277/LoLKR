@@ -7,6 +7,16 @@
         <language>kr</language>
         
         <item>
+            <title>Version 1.4.0</title>
+            <description>
+                <![CDATA[
+                    <ul><li>로비 화면 UI 업데이트</li></ul>
+                ]]>
+            </description>
+            <pubDate>Sun, 13 Mar 2016 15:30:00 +9000</pubDate>
+            <enclosure url="https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip" sparkle:shortVersionString="1.4.0" sparkle:version="12" length="1813135" type="application/octet-stream" sparkle:dsaSignature="MC0CFQClvTJE0IYeiAYbdTmkhCL9qWpxpwIUW3+is4id+P1igCOJon5OsjA1eF4="/>
+        </item>
+        <item>
             <title>Version 1.3.3</title>
             <description>
                 <![CDATA[

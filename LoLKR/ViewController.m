@@ -365,7 +365,7 @@
               NSTextCheckingResult *match = [regex firstMatchInString:row.textContent options:0 range:NSMakeRange(0, row.textContent.length)];
               if (match.range.length != 0) {
                   currentVersion = [row.textContent substringWithRange:[match rangeAtIndex:1]];
-                  [labelKR setStringValue:[NSString stringWithFormat:@"한국서버: %@", currentVersion]];
+                  [labelKR setStringValue:[NSString stringWithFormat:@"한국 서버: %@", currentVersion]];
                   break;
               }
           }
@@ -376,7 +376,7 @@
     NSError *error = nil;
     NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:@"Patch (\\d+\\.\\d+) [Nn]otes?" options:0 error:&error];
     
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://na.leagueoflegends.com/en/news?page=%d", page]];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://oce.leagueoflegends.com/en/news?page=%d", page]];
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:URL completionHandler:
       ^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -393,7 +393,7 @@
               NSTextCheckingResult *match = [regex firstMatchInString:row.textContent options:0 range:NSMakeRange(0, row.textContent.length)];
               if (match.range.length != 0) {
                   currentVersion = [row.textContent substringWithRange:[match rangeAtIndex:1]];
-                  [labelNA setStringValue:[NSString stringWithFormat:@"북미서버: %@", currentVersion]];
+                  [labelNA setStringValue:[NSString stringWithFormat:@"오세아니아 서버: %@", currentVersion]];
                   break;
               }
           }

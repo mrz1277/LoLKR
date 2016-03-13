@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B386F99F263A1A9AE38AE082 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ADF3F2B1BE18C3FA711AC7 /* libPods.a */; };
+		B60E118D1C952D480022EDCF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60E118B1C95202F0022EDCF /* Sparkle.framework */; };
+		B60E118E1C952D480022EDCF /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B60E118B1C95202F0022EDCF /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B61B57FD1AD69ECB006558AA /* 1_nginx.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FC1AD69DB7006558AA /* 1_nginx.sh */; };
 		B61B57FF1AD6A0EB006558AA /* 2_download_versions.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */; };
 		B61B58011AD6A6B2006558AA /* 3_lol.sh in Resources */ = {isa = PBXBuildFile; fileRef = B61B58001AD6A6B2006558AA /* 3_lol.sh */; };
@@ -35,11 +37,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B60E118F1C952D490022EDCF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B60E118E1C952D480022EDCF /* Sparkle.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		08ADF3F2B1BE18C3FA711AC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C10437A67E8042E60E47DB9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		450107DDDFF60139139CA600 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B60AFEA01ADBED72008A6547 /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; fileEncoding = 4; path = README.md; sourceTree = "<group>"; };
+		B60E118B1C95202F0022EDCF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Pods/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 		B61B57FC1AD69DB7006558AA /* 1_nginx.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = 1_nginx.sh; sourceTree = "<group>"; };
 		B61B57FE1AD6A0EB006558AA /* 2_download_versions.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 2_download_versions.sh; sourceTree = "<group>"; };
 		B61B58001AD6A6B2006558AA /* 3_lol.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = 3_lol.sh; sourceTree = "<group>"; };
@@ -72,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B386F99F263A1A9AE38AE082 /* libPods.a in Frameworks */,
+				B60E118D1C952D480022EDCF /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +204,7 @@
 		CC3FC6C2389B3786836051F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B60E118B1C95202F0022EDCF /* Sparkle.framework */,
 				08ADF3F2B1BE18C3FA711AC7 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -203,6 +222,7 @@
 				B67E1D501AC68578003FA730 /* Frameworks */,
 				B67E1D511AC68578003FA730 /* Resources */,
 				1A38A10BD7AD76A6B9BDD7D5 /* Copy Pods Resources */,
+				B60E118F1C952D490022EDCF /* Embed Frameworks */,
 				B622A3471B076E82007D1755 /* ShellScript */,
 				A7663C9FBCE051AEAB373D5B /* Embed Pods Frameworks */,
 			);
@@ -239,6 +259,9 @@
 		B67E1D4B1AC68578003FA730 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Jaesung Koo";
 				TargetAttributes = {
@@ -475,6 +498,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sparkle",
+				);
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -491,6 +518,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sparkle",
+				);
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;

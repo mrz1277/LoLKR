@@ -68,8 +68,8 @@ http {
         server_name localhost;
 
         rewrite      ^(.*)_KR\$                                             \$1_OC1;
-        rewrite      ^(.*)_ko_kr/(((?!files).)*)\$          \$1_en_au/\$2;
-        rewrite      ^(.*)_kr/(((?!files).)*)\$             \$1_oc1/\$2;
+        rewrite      ^(.*)_ko_kr/(((?!files|releasemanifest).)*)\$          \$1_en_au/\$2;
+        rewrite      ^(.*)_kr/(((?!files|releasemanifest).)*)\$             \$1_oc1/\$2;
 
         location / {
             proxy_pass  http://l3cdn.riotgames.com;
