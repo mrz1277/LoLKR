@@ -29,9 +29,9 @@ fi
 # download files
 cd /usr/local/var/www/releases/Maclive
 BASE_URL="http://l3cdn.riotgames.com/releases/Maclive"
-curl -o solutions/lol_game_client_sln/releases/releaselisting_KR $BASE_URL/solutions/lol_game_client_sln/releases/releaselisting_NA
-curl -o projects/lol_air_client/releases/releaselisting_KR $BASE_URL/projects/lol_air_client/releases/releaselisting_NA
-curl -o projects/lol_air_client_config_kr/releases/releaselisting_KR $BASE_URL/projects/lol_air_client_config_na/releases/releaselisting_NA
-curl -o projects/lol_launcher/releases/releaselisting_KR $BASE_URL/projects/lol_launcher/releases/releaselisting_NA
-curl -o projects/lol_patcher/releases/releaselisting_KR $BASE_URL/projects/lol_patcher/releases/releaselisting_NA
+curl -o solutions/lol_game_client_sln/releases/releaselisting_KR $BASE_URL/solutions/lol_game_client_sln/releases/releaselisting_OC1
+curl -o projects/lol_air_client/releases/releaselisting_KR $BASE_URL/projects/lol_air_client/releases/releaselisting_OC1
+curl -o projects/lol_air_client_config_kr/releases/releaselisting_KR $BASE_URL/projects/lol_air_client_config_oc1/releases/releaselisting_OC1
+curl -o projects/lol_launcher/releases/releaselisting_KR $BASE_URL/projects/lol_launcher/releases/releaselisting_OC1
+curl -o projects/lol_patcher/releases/releaselisting_KR $BASE_URL/projects/lol_patcher/releases/releaselisting_OC1
 curl -o system/filelist.versioninfo $BASE_URL/system/filelist.versioninfo

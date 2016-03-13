@@ -31,8 +31,9 @@ ru,            ru,            ru_RU,                                            
 la1,           la1,           es_MX,                                                                                                                                                          A
 la2,           la2,           es_MX,                                                                                                                                                          A
 oc1,           oc1,           en_AU,                                                                                                                                                          A
+jp,            jp,            ja_JP,                                                                                                                                                          A
 kr,            kr,            ko_KR|en_US,                                                                                                                                                    A
-" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.0/regions.txt
+" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.45/regions.txt
 
 echo "na,            NA,            lol_air_client_config_na,                                   NA1,                                                        prod.na1.lol.riotgames.com,                                 status.leagueoflegends.com
 br,            BR,            lol_air_client_config_br,                                   BR1,                                                        prod.br.lol.riotgames.com,                                  status.leagueoflegends.com
@@ -43,8 +44,9 @@ ru,            RU,            lol_air_client_config_ru,                         
 la1,           LA1,           lol_air_client_config_la1,                                  LA1,                                                        prod.la1.lol.riotgames.com,                                 status.leagueoflegends.com
 la2,           LA2,           lol_air_client_config_la2,                                  LA2,                                                        prod.la2.lol.riotgames.com,                                 status.leagueoflegends.com
 oc1,           OC1,           lol_air_client_config_oc1,                                  OC1,                                                        prod.oc1.lol.riotgames.com,                                 status.leagueoflegends.com
+jp,            JP,            lol_air_client_config_jp,                                   jp1,                                                        prod.jp1.lol.riotgames.com,                                 status.leagueoflegends.com
 kr,            KR,            lol_air_client_config_kr,                                   KR,                                                         prod.kr.lol.riotgames.com,                                  status.leagueoflegends.com
-" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.0/shards.txt
+" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.45/shards.txt
 
 echo "English, en_US
 Português, pt_BR
@@ -62,7 +64,8 @@ Română, ro_RO
 Русский, ru_RU
 Español, es_MX
 English, en_AU
-Korean, ko_KR" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.7/languages.txt
+日本語, ja_JP
+Korean, ko_KR" > $BASE_DIR/projects/lol_patcher/managedfiles/0.0.0.45/languages.txt
 
 # change update server address
 echo "DownloadPath = /releases/Maclive
@@ -70,13 +73,13 @@ DownloadURL = 127.0.0.1:$2
 Region = KR" > "$BASE_DIR/system/system.cfg"
 
 # change login server address
-if [ ! -d "$BASE_DIR/projects/lol_air_client_config_na/releases" ]; then
+if [ ! -d "$BASE_DIR/projects/lol_air_client_config_oc1/releases" ]; then
     echo "북미 서버를 먼저 선택하고 업데이트가 완료되어야 합니다."
     exit 3
 fi
 
 if [ ! -d "$BASE_DIR/projects/lol_air_client_config_kr" ]; then
-    cp -r "$BASE_DIR/projects/lol_air_client_config_na" "$BASE_DIR/projects/lol_air_client_config_kr"
+    cp -r "$BASE_DIR/projects/lol_air_client_config_oc1" "$BASE_DIR/projects/lol_air_client_config_kr"
 fi
 
 find "$BASE_DIR/projects/lol_air_client_config_kr" -name "lol.properties" | while read filename; do echo "host=prod.kr.lol.riotgames.com,prod.kr.lol.riotgames.com
@@ -90,6 +93,8 @@ storyPageURL=http://www.leagueoflegends.co.kr/launcher/journal.php
 ladderURL=http://www.leagueoflegends.co.kr
 platformId=KR
 ekg_uri=https://ekg.riotgames.com
+loadModuleChampionDetail=true
+useOldChatRenderers=true
 riotDataServiceDataSendProbability=1.0" > "$filename"; done
 
 echo "airConfigProject = lol_air_client_config_kr" > "$BASE_DIR/system/launcher.cfg"
