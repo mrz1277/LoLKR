@@ -267,9 +267,7 @@
 				TargetAttributes = {
 					B67E1D521AC68578003FA730 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 5DXR74P6C5;
-						DevelopmentTeamName = "JANG WON HEE (Personal Team)";
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = F6U7JSUCV5;
 					};
 					B67E1D681AC68578003FA730 = {
 						CreatedOnToolsVersion = 6.2;
@@ -379,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# Usually set by Xcode\n# CODE_SIGN_IDENTITY=\"Mac Developer: Jaesung Koo (JX3RHMUU32)\"\n\n# codesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# Usually set by Xcode\nCODE_SIGN_IDENTITY=\"Mac Developer: Jaesung Koo (JX3RHMUU32)\"\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -507,10 +505,8 @@
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devmario.lolkr;
+				PRODUCT_BUNDLE_IDENTIFIER = koo.jasesung.lolkr;
 				PRODUCT_NAME = "롤 한국 서버 패치";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -529,10 +525,8 @@
 				INFOPLIST_FILE = LoLKR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devmario.lolkr;
+				PRODUCT_BUNDLE_IDENTIFIER = koo.jasesung.lolkr;
 				PRODUCT_NAME = "롤 한국 서버 패치";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
