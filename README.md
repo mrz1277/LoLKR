@@ -1,10 +1,10 @@
-**프로젝트를 유지해 주실 개발자를 찾고 있습니다.**
+# 맥 공식 어플리케이션 출시
 
-개인 사정으로 예전만큼 롤을 꾸준히 못하게 되어서 문제 발생시 대응을 빠르게 할 수 없게 되었습니다. 최근 릴리즈한 1.4.0 버전에 북미 대신 업데이트 시간대가 비슷한 오세아니아로 기본 서버를 변경하고 6.5에 변경된 사항들을 패치했으나 앞으로 비슷한 변경이 있거나 프로젝트 개선이 필요할 때 이를 대응해 주실 수 있는 분이 필요합니다. 본 프로젝트의 메인테이너도 괜찮고 별도로 포크한 프로젝트도 좋습니다. [이슈](https://github.com/mrz1277/LoLKR/issues)에 글 남겨주시면 감사하겠습니다.
+http://www.leagueoflegends.co.kr/?m=download&mod=client_mac
 
-# [다운로드](https://github.com/mrz1277/LoLKR/releases/download/latest/LoLKR.zip)
+--- 
 
-[![Join the chat at https://gitter.im/mrz1277/LoLKR](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mrz1277/LoLKR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+**_이 프로젝트는 더 이상 유지되지 않습니다._**
 
 업데이트는 LoLKR 실행하고 상단 메뉴바의 `롤 한국 서버 패치` 메뉴를 누르고 `업데이트 확인`을 누르시면 됩니다.
 
